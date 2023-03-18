@@ -1,0 +1,13 @@
+format:
+  pdf:
+    keep-tex: false
+    fig-pos: "!t"
+    include-in-header: 
+      text: |
+        \usepackage{dcolumn}
+
+execute: 
+  eval: true
+  echo: false
+  warning: false
+  error: false

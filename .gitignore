@@ -1,0 +1,15 @@
+# files added by usethis::git_vaccinate
+.httr-oauth
+.Rproj.user
+.Rhistory
+.Rdata
+.DS_Store
+# Ignore all the junk created by LaTeX
+*.aux
+*.out
+*.bbl
+*.ent
+*.log
+# quarto
+/.quarto/
+_products

@@ -1,0 +1,15 @@
+project:
+  title: "Research Template"
+  pre-render: check_packages.R
+  output-dir: _products
+  
+execute: 
+  freeze: auto
+  
+editor: source
+
+bibliography: project.bib
+
+
+
+

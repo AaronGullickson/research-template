@@ -1,0 +1,12 @@
+format:
+  revealjs:
+    theme: blood
+    chalkboard: true
+    preview-links: true
+    incremental: true
+    smaller: false
+    background-transition: concave
+    fig-align: center
+    highlight-style: arrow
+    code-line-numbers: false
+    self-contained: false

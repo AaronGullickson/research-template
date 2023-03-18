@@ -1,0 +1,5 @@
+---
+title: "Paper Manuscript"
+---
+
+This quarto doc is for writing the manuscript
