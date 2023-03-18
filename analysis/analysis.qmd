@@ -2,4 +2,11 @@
 title: "Research Analysis Notebook"
 ---
 
+```{r}
+#| label: setup
+library(here)
+source(here("check_packages.R"))
+source(here("functions.R"))
+```
+
 This quarto doc is used to analyze the data.

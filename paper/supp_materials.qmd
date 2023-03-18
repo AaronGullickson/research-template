@@ -2,4 +2,11 @@
 title: "Supplementary Materials"
 ---
 
+```{r}
+#| label: setup
+library(here)
+source(here("check_packages.R"))
+source(here("functions.R"))
+```
+
 This document is for supplementary materials

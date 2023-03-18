@@ -2,6 +2,12 @@ project:
   title: "Research Template"
   pre-render: check_packages.R
   output-dir: _products
+  render:
+    - analysis/organize_data.qmd
+    - analysis/analysis.qmd
+    - paper/main_manuscript.qmd
+    - paper/supp_materials.qmd
+    - presentation/presentation.qmd
   
 execute: 
   freeze: auto
