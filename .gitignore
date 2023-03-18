@@ -13,3 +13,4 @@
 # quarto
 /.quarto/
 _products
+_freeze
