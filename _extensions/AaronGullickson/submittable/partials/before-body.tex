@@ -1,0 +1,49 @@
+$-- Implements the frontmatter, title page, and abstract.
+$--
+$-- %%%% TODO %%%%%
+$-- Customize is needed, otherwise remove this partials to use Quarto default one
+$-- %%%%%%%%%%%%%%%%
+
+$if(endnotes)$
+  \let\footnote=\endnote
+  \renewcommand\enoteformat{%
+    \normalsize \noindent\theenmark) \ \hangindent .7\parindent %
+  }
+$endif$
+
+$if(has-frontmatter)$
+\frontmatter
+$endif$
+$if(title)$
+\maketitle
+$endif$
+$if(abstract)$
+\begin{abstract}
+$abstract$
+\end{abstract}
+$endif$
+$if(keywords)$
+\textbf{Keywords:}
+\def\sep{, }
+$for(keywords/allbutlast)$$keywords$\sep $endfor$
+$for(keywords/last)$$keywords$$endfor$
+$endif$
+
+$if(titlepage)$
+\pagenumbering{gobble}
+\newpage 
+\pagenumbering{arabic}
+$if(title)$
+\LARGE
+\begin{center}
+\title{$title$}
+\end{center}
+\bigskip
+\normalsize
+$endif$
+$if(abstract)$
+\begin{abstract}
+$abstract$
+\end{abstract}
+$endif$
+$endif$

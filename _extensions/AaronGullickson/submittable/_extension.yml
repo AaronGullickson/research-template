@@ -1,0 +1,27 @@
+title: Submittable Manuscript
+author: Aaron Gullickson
+version: 0.0.1
+contributes:
+  formats:
+    common:
+      fig-dpi: 300
+      knitr:
+        opts_chunk:
+          echo: false
+          message: false
+          warning: false
+      # this will allow html table output in word documents
+      prefer-html: true 
+    pdf:
+      # define default configuration for the pdf version of your format
+      documentclass: article
+      include-in-header:
+        - "include-in-header.tex"
+      template-partials:
+        - "partials/title.tex"
+        - "partials/_authors.tex"
+        - "partials/before-body.tex"
+        - "partials/after-body.tex"
+        - "partials/before-bib.tex"
+    docx: 
+      reference-doc: reference.docx

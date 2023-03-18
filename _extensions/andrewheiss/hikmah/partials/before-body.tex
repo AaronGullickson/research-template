@@ -1,0 +1,50 @@
+% ---------------
+% TITLE SECTION
+% ---------------
+$if(published)$
+$if(code-repo)$
+\published{\textbf{$date$} \qquad $published$ \\ {\scriptsize $code-repo$}}
+$else$
+\published{\textbf{$date$} \qquad {\scriptsize $published$}}
+$endif$
+$else$
+$if(code-repo)$
+\published{\textbf{$date$} \\ {\scriptsize $code-repo$}}
+$else$
+\published{\textbf{$date$}}
+$endif$
+$endif$
+
+$if(title)$
+\maketitle
+$endif$
+
+$if(abstract)$
+\begin{abstract}
+$abstract$
+\end{abstract}
+\vskip 3em
+$endif$
+
+$if(keywords)$
+\begin{keywords}
+\def\sep{;\ }
+$for(keywords/allbutlast)$$keywords$\sep $endfor$
+$for(keywords/last)$$keywords$$endfor$
+\end{keywords}
+$endif$
+
+$if(epigraph)$
+$for(epigraph)$
+$if(epigraph.source)$
+\epigraph{$epigraph.text$}{---$epigraph.source$}
+$else$
+\epigraph{$epigraph.text$}
+$endif$
+$endfor$
+$endif$
+% -------------------
+% END TITLE SECTION
+% -------------------
+
+
