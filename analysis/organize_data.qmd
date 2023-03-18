@@ -4,6 +4,7 @@ title: "Organize Data Notebook"
 
 ```{r}
 #| label: setup
+#| include: false
 library(here)
 source(here("check_packages.R"))
 source(here("functions.R"))

@@ -1,9 +1,13 @@
 ---
 title: "Paper Manuscript"
+abstract: An Abstract
+keywords: [keyword1, keyword2]
+thanks: Thanks to everyone for checking this out.
 ---
 
 ```{r}
 #| label: setup
+#| include: false
 library(here)
 source(here("check_packages.R"))
 source(here("functions.R"))

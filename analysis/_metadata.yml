@@ -2,3 +2,4 @@ format:
   html:
     code-fold: true
     self-contained: true
+    theme: flatly

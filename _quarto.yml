@@ -8,6 +8,23 @@ project:
     - paper/main_manuscript.qmd
     - paper/supp_materials.qmd
     - presentation/presentation.qmd
+
+author:
+  - name: Aaron Gullickson
+    orcid: 0000-0001-7237-8131
+    email: aarong@uoregon.edu
+    url: https://aarongullickson.netlify.app/
+    attributes:
+      corresponding: true
+    affiliations:
+      - id: uo
+        name: University of Oregon
+        department: Sociology
+        address: 727 PLC
+        city: Eugene
+        region: OR
+        country: USA
+        postal-code: 97405
   
 execute: 
   freeze: auto
