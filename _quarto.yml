@@ -11,6 +11,7 @@ project:
     - analysis/analysis.qmd
     - paper/
     - presentation/
+  execute-dir: project
 
 author:
   - name: Aaron Gullickson
@@ -34,7 +35,8 @@ execute:
   
 editor: source
 
-bibliography: project.bib
+bibliography: bibliography/project.bib
+csl: bibliography/chicago-parenthetical.csl
 
 
 
