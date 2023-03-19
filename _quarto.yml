@@ -1,13 +1,16 @@
 project:
   title: "Research Template"
-  pre-render: check_packages.R
+  pre-render: 
+    - check_packages.R
+    - rm -r data/data_constructed
+    - mkdir data/data_constructed
+    - rm -r _products      # refresh products directory to prevent artifacts
   output-dir: _products
   render:
     - analysis/organize_data.qmd
     - analysis/analysis.qmd
-    - paper/main_manuscript.qmd
-    - paper/supp_materials.qmd
-    - presentation/presentation.qmd
+    - paper/
+    - presentation/
 
 author:
   - name: Aaron Gullickson
@@ -27,7 +30,7 @@ author:
         postal-code: 97405
   
 execute: 
-  freeze: auto
+  freeze: false
   
 editor: source
 
