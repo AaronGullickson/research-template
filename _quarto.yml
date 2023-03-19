@@ -11,6 +11,7 @@ project:
     - analysis/analysis.qmd
     - paper/
     - presentation/
+    - "!bibliography/"
   execute-dir: project
 
 author:
