@@ -1,7 +1,7 @@
 project:
   title: "Research Template"
   pre-render: 
-    - check_packages.R
+    - utils/check_packages.R
     - rm -r data/data_constructed
     - mkdir data/data_constructed
     - rm -r _products      # refresh products directory to prevent artifacts

@@ -13,8 +13,8 @@ format:
 #| label: setup
 #| include: false
 library(here)
-source(here("check_packages.R"))
-source(here("functions.R"))
+source(here("utils","check_packages.R"))
+source(here("utils","functions.R"))
 ```
 
 This document is for supplementary materials

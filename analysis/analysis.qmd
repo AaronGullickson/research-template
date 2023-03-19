@@ -6,8 +6,8 @@ title: "Research Analysis Notebook"
 #| label: setup
 #| include: false
 library(here)
-source(here("check_packages.R"))
-source(here("functions.R"))
+source(here("utils","check_packages.R"))
+source(here("utils","functions.R"))
 ```
 
 This quarto doc is used to analyze the data.
