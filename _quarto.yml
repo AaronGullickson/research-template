@@ -1,12 +1,11 @@
 project:
   title: "Research Template"
   pre-render: 
-    - utils/check_packages.R
-    - rm -r data/data_constructed
-    - mkdir data/data_constructed
-    - rm -r _products      # refresh products directory to prevent artifacts
+    - utils/check_packages.R      # install required packages
+    - utils/remove_artifacts.ts   # remove previously constructed files
   output-dir: _products
   render:
+    # if analysis is split into multiple docs, add them here
     - analysis/organize_data.qmd
     - analysis/analysis.qmd
     - paper/
