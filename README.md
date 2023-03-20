@@ -1,4 +1,6 @@
 
+## A Reproducible Research Workflow
+
 ```mermaid
 flowchart LR
     A((Raw Data)):::real --> B[Data Organization\nScripts]:::real
@@ -28,3 +30,10 @@ flowchart LR
   <dt>Final Products</dt>
   <dd>Final polished products for external audience produced by the reproducible reports. This could include research manuscripts, reports, presentations, or posters.</dd>
 </dl>
+
+### What is real about your workflow?
+
+- Everything in green is what is real about your workflow. This includes all of the scripts, reproducible reports, and the raw data.
+- Everything in yellow is an artifact produced at a certain point in time by the things that are real (i.e. your scripts and your raw data). 
+
+If your workflow is reproducible then you should be able to delete all of the items in yellow at any time and exactly reproduce them via what is real.
