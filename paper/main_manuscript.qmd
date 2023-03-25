@@ -1,5 +1,6 @@
 ---
 title: "Paper Manuscript"
+shorttitle: "Paper"
 abstract: An Abstract
 keywords: [keyword1, keyword2]
 thanks: Thanks to everyone for checking this out.
@@ -12,12 +13,12 @@ format:
     include-in-header: 
       text: |
         \usepackage{dcolumn}
-# submittable-pdf:
-  #   keep-tex: false
-  #   fig-pos: "!t"
-  #   include-in-header: 
-  #     text: |
-  #       \usepackage{dcolumn}
+#  submittable-pdf:
+#     keep-tex: false
+#     fig-pos: "!t"
+#     include-in-header: 
+#       text: |
+#         \usepackage{dcolumn}
   submittable-docx: default
 ---
 
