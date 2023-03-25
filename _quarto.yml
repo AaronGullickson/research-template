@@ -11,7 +11,6 @@ project:
     - paper/
     - presentation/
     - "!bibliography/"
-  execute-dir: project
 
 author:
   - name: Aaron Gullickson
@@ -34,10 +33,6 @@ execute:
   freeze: false
   
 editor: source
-
-bibliography: bibliography/project.bib
-csl: bibliography/chicago-parenthetical.csl
-
 
 
 
