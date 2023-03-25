@@ -11,17 +11,26 @@ contributes:
           message: false
           warning: false
       # this will allow html table output in word documents
-      prefer-html: true 
+      prefer-html: true
     pdf:
       # define default configuration for the pdf version of your format
       documentclass: article
+      linestretch: 2          # line spacing (1 for single, 2 for double)
+      mainfont: Times New Roman
+      fontsize: 12pt          # font size (typically 10pt, 11pt, or 12pt)
+      geometry: margin=1in    # controls the margin size
+      papersize: letter
+      colorlinks: true
+      urlcolor: red
+      fig-height: 4
+      fig-width: 7.5
       include-in-header:
-        - "include-in-header.tex"
+        - "header.tex"
       template-partials:
         - "partials/title.tex"
         - "partials/_authors.tex"
         - "partials/before-body.tex"
         - "partials/after-body.tex"
         - "partials/before-bib.tex"
-    docx: 
+    docx:
       reference-doc: reference.docx
