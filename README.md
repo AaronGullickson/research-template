@@ -24,7 +24,9 @@ quarto update AaronGullickson/submittable-quarto
 
 ## A Reproducible Research Workflow
 
-This workflow assumes that this research project can generally be divided into three distinct phases. These phases are:
+### Three Phases
+
+This workflow assumes that a research project can generally be divided into three distinct phases. These phases are:
 
 <dl>
   <dt>Generating Analytical Data</dt>
@@ -35,6 +37,8 @@ This workflow assumes that this research project can generally be divided into t
     <dt>Creating Final Products</dt>
     <dd>The final products of a research project might be a manuscript for journal submission, a research report, a presentation, a poster, etc. In this phase, the output of the previous phase is typically converted into a more public facing document. Traditionally, errors in transcription are a real concern in this phase as researchers translate things like model output to tables in the final products. Additionally, versioning errors can be an issue here because some of the research artifacts from the previous phase may not reflect the most recent iteration of the analytical data.</dd>
 </dl>
+
+### The Principles of a Reproducible Research Workflow
 
 In a reproducible research workflow, we use scripting and reproducible reports to reduce the potential for versioning and transcription errors at each phase of the workflow. This workflow is visualized in the flowchart below.
 
