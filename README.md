@@ -13,7 +13,7 @@ To start an actual research project with this template:
 6. From RStudio, open the `_quarto.yml` file and change the project title and author information. You can add multiple authors here if you like.
 7. Go to `utils/check_packages.R` and add or remove any packages based on what your project requires. Source this file in to make sure you have all the dependencies installed.
 8. In the upper right panel of RStudio, go to the Build tab and click "Render project." You will see how quarto runs through the entire project, script by script. Look at the `_products` directory for the output.
-9. Dump some raw data into into `data/data_raw` and start coding!
+9. Dump some raw data into `data/data_raw` and start coding! You can also learn more about how to [use this workflow](#using-this-workflow) below.
 
 You may also want to update the extensions that are included with the project when you start it. To do this type into the Terminal:
 
@@ -30,10 +30,10 @@ This workflow assumes that a research project can generally be divided into thre
 
 <dl>
   <dt>Generating Analytical Data</dt>
-  <dd>In this phase, raw data sources are converted into an analytical dataset or datasets that provide the necessary variables and data cleaning for researchers to conduct the research. This step is often called "data cleaning" but can involve many different activities such as recoding variables, imputing missing values, subsetting data, aggregating data, merging two or more data sources, and reshaping data. Regardless of the specific activity, researchers should always **check themselves before they wreck themselves** to ensure none of these procedures create errors. 
+  <dd>In this phase, raw data sources are converted into an analytical dataset or datasets that provide the necessary variables and data cleaning for researchers to conduct the research. This step is often called "data cleaning" but can involve many different activities such as recoding variables, imputing missing values, subsetting data, aggregating data, merging two or more data sources, and reshaping data. Regardless of the specific activity, researchers should always check themselves before they wreck themselves to ensure none of these procedures create errors. 
  Although sometimes characterized as the "drudgery" phase of analysis, this phase is absolutely critical to a successful data analysis. Moreover, the decisions made at this stage often reflect important conceptual and theoretical issues related to the broader research questions and thus it should not be seen as simple preparatory work for the actual analysis, but in fact, a key part of the overall project itself.</dd>
     <dt>Performing the Analysis</dt>
-    <dd>In this phase, the researchers use the constructed analytical data to perform the main analysis. This may include, among other things, exploratory work using data visualizations, the creation of simple statistical summaries, the creation of complex models. In doing this analysis, the researchers may create many data artifacts such as log files, model output, lab notebooks, etc. As I explain below, these artifacts are never the product of the work, and are instead potential sources of danger because some artifacts may not be up to date with the most iteration of a project.</dd>
+    <dd>In this phase, the researchers use the constructed analytical data to perform the main analysis. This may include, among other things, exploratory work using data visualizations, the creation of simple statistical summaries, the creation of complex models, and performing sensitivity tests. In doing this analysis, the researchers may create many data artifacts such as log files, model output, lab notebooks, etc. As I explain below, these artifacts are never the product of the work, and are instead potential sources of danger because some artifacts may not be up to date with the most current iteration of a project.</dd>
     <dt>Creating Final Products</dt>
     <dd>The final products of a research project might be a manuscript for journal submission, a research report, a presentation, a poster, etc. In this phase, the output of the previous phase is typically converted into a more public facing document. Traditionally, errors in transcription are a real concern in this phase as researchers translate things like model output to tables in the final products. Additionally, versioning errors can be an issue here because some of the research artifacts from the previous phase may not reflect the most recent iteration of the analytical data.</dd>
 </dl>
@@ -64,13 +64,13 @@ flowchart LR
   <dt>Data Organization Scripts</dt>
   <dd>Script or scripts that transform/wrangle the original raw data into the analytical data that will actually be analyzed. This process may include recoding, subsetting, imputing missing values, merging, reshaping, etc.</dd>
   <dt>Analytical Data</dt>
-  <dd>The product of the data organization scripts. These files will typically be stored in binary format and should be placed in a different location than raw data to avoid confusion. The analytical data is an *artifact* and thus a potential source of error.</dd>
+  <dd>The product of the data organization scripts. These files will typically be stored in binary format and should be placed in a different location than raw data to avoid confusion. The analytical data is an artifact and thus a potential source of error.</dd>
   <dt>Analysis Scripts</dt>
   <dd>The scripts that load in the analytical data and perform the analysis which may involve creating tables and figures, summarizing, aggregating, and the creation of models, among other things.</dd>
   <dt>Reproducible Reports</dt>
-  <dd>Reports that will generate final products such as research manuscripts, reports, presentations, and posters. These files run integrated code to produce consistent results programmatically (e.g. Quarto, R Markdown, or Sweave documents).</dd>
+  <dd>Reports that will generate final products such as research manuscripts, reports, presentations, and posters. These files run integrated code to produce consistent results programmatically (e.g. Quarto, R Markdown, or Sweave documents). Much of the code in these reproducible reports will be borrowed directly from the analysis scripts.</dd>
   <dt>Intermediate Output</dt>
-  <dd>Output created in the process of analysis. This could include log files, figure images, text output of model results, etc. All of these files are *artifacts* and thus a potential source of error.</dd>
+  <dd>Output created in the process of analysis. This could include log files, figure images, text output of model results, etc. All of these files are artifacts and thus a potential source of error.</dd>
   <dt>Final Products</dt>
   <dd>Final polished products for external audience produced by the reproducible reports. This could include research manuscripts, reports, presentations, or posters.</dd>
 </dl>
