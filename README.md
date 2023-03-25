@@ -94,6 +94,10 @@ In everyday practice, individual files will be rendered separately, but the enti
 quarto render
 ```
 
+### Adding Author Information
+
+All quarto files will pull author information from the main `_quarto.yml` file. The author information there should be changed to reflect the authors of the project. Multiple authors can be listed.
+
 ### Adding Additional Scripts
 
 For big projects a single `organize_data.qmd` and `analysis.qmd` file may not be sufficient. You can split each of those files into multiple files of the same type. If you do, you will need to update the `_quarto.yml` file to specify these files and the order in which they should be run in the `render` section. For example if you split `organize_data.qmd` into `organize_data_source1.qmd` and `organize_data_source2.qmd`, you would change that section to read:
@@ -109,4 +113,18 @@ For big projects a single `organize_data.qmd` and `analysis.qmd` file may not be
     - "!bibliography/"
 ```
 
+To ensure package dependencies are properly specified and that global functions are loaded, any new R scripts or Quarto document created should always start with:
+
+```r
+library(here)
+source(here("utils","check_packages.R"))
+source(here("utils","functions.R"))
+```
+
 ### Handling Package Dependencies
+
+Aside from the `here` library, no direct library commands should be written into R scripts or quarto documents. Instead, all of these scripts should source in the `utils/check_packages.R` script which will check for package dependencies and install needed packages. Users can add or remove packages from the list specified in that file. Anyone using the project can source this file to both load the dependencies and ensure they are up-to-date.
+
+### Making Global Functions
+
+To create custom functions that will be accessible to all scripts in the project, users should create such functions in the `utils/functions.R` script. This script is then sourced into all other scripts.
