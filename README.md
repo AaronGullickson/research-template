@@ -76,3 +76,24 @@ flowchart LR
 </dl>
 
 Everything shown above in green is the *real* part of your workflow. This includes the raw data, the scripts, and the reproducible reports. The remaining *yellow* parts are artifacts and should be reproducible at any point fom the real part of your workflow. You should feel comfortable deleting the yellow parts at any point because they can be reproduced by the green parts. In fact, you should make it a regular practice to delete all the yellow parts and rerun your analysis from the start on a regular basis to ensure artifacts are not affecting your results.
+
+## Using This Workflow
+
+This workflow follows the general principles outlined above. Generally the research process will proceed as follows:
+
+1. Add raw data sources to `data/data_raw`. When I am using multiple data sources, I often place these in sub-directories. I also usually document each data source in the README within the `data_raw` directory. Only raw data should be kept in this directory.
+2. Use the `analysis/organize_data.qmd` file to construct analytical data from the raw data. I prefer to do this in a quarto document rather than a plain R script because then I get essentially a research log (HTML format) in which I can keep track of all my tests to ensure that my data cleaning worked as intended. Typically, you will save the final analytical data into an `RData` file. This file (or files) should always be placed in `data/data_constructed`
+3. Use the `analysis/analysis.qmd` to conduct the analysis. This will produce a lab notebook in HTML format. Sometimes, when it takes a long time to run models or other things, I may save some of the output as RData files and place it in the same `data/data_constructed` folder.
+4. Use the quarto documents in the `paper` directory and/or the `presentation` directory to create papers and presentations, respectively. I will often pull code chunks from the `analysis.qmd` to these files as a starting point for final tables and figures. By default, I use my own [custom template](https://github.com/AaronGullickson/aog-article-template) to produce manuscript PDF files, but you can switch this to another template of your choice. The `bibliography` directory contains a Bibtex file for the project that can be exported from other software or built from within the quarto documents themselves. You can also place your preferred [CSL files](https://www.zotero.org/styles) here.
+
+The output of all rendered quarto documents will be placed in the `_products` directory. This directory along with `data/data_constructed` contain the artifacts from the workflow.
+
+In everyday practice, individual files will be rendered separately, but the entire project can also be rendered. The user should periodically do this because it will automatically delete any prior artifacts and start from scratch, ensuring that all rendered output is up to date with the most current iteration of the scripts. The project can be rendered from the `Build` tab in the upper right panel of RStudio, or from the command line of the base project directory:
+
+```bash
+quarto render
+```
+
+### Adding Additional Scripts
+
+### Handling Package Dependencies
