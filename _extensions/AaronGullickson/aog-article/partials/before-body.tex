@@ -1,0 +1,45 @@
+$-- Implements the frontmatter, title page, and abstract.
+
+% for some reason this does not work in header
+\renewcommand{\abstractname}{Abstract.}
+
+$if(shorttitle)$
+\fancyhead[L]{$shorttitle$}
+$endif$
+
+% need to redefine this environment to get enough spacing of 
+% bibliography after title
+\renewenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \vspace{10pt}
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+
+$if(has-frontmatter)$
+\frontmatter
+$endif$
+$if(title)$
+\maketitle
+%\noindent \rule{\linewidth}{.5pt}
+$if(abstract)$
+\begin{abstract}
+$abstract$
+\end{abstract}
+$if(keywords)$
+\begin{keywords}
+\def\sep{;\ }
+$for(keywords/allbutlast)$$keywords$\sep $endfor$
+$for(keywords/last)$$keywords$$endfor$
+\end{keywords}
+$endif$
+$endif$
+%\noindent \rule{\linewidth}{.5pt}
+$endif$

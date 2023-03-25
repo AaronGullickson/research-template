@@ -3,10 +3,12 @@ title: "Paper Manuscript"
 abstract: An Abstract
 keywords: [keyword1, keyword2]
 thanks: Thanks to everyone for checking this out.
+reference-section-title: References
+bibliography: ../bibliography/project.bib
+csl: ../bibliography/chicago-parenthetical.csl
 format:
-  hikmah-pdf:
+  aog-article-pdf:
     keep-tex: false
-    fig-pos: "!t"
     include-in-header: 
       text: |
         \usepackage{dcolumn}
@@ -16,7 +18,7 @@ format:
   #   include-in-header: 
   #     text: |
   #       \usepackage{dcolumn}
-  # submittable-docx: default
+  submittable-docx: default
 ---
 
 ```{r}
@@ -27,5 +29,14 @@ source(here("utils","check_packages.R"))
 source(here("utils","functions.R"))
 ```
 
+# Introduction
 
-This quarto doc is for writing the manuscript
+This quarto doc is for writing the manuscript. This is a test citation [@alba1990].
+
+# Background
+
+# Data and Methods
+
+# Results
+
+# Conclusions
