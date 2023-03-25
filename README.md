@@ -38,7 +38,7 @@ This workflow assumes that a research project can generally be divided into thre
     <dd>The final products of a research project might be a manuscript for journal submission, a research report, a presentation, a poster, etc. In this phase, the output of the previous phase is typically converted into a more public facing document. Traditionally, errors in transcription are a real concern in this phase as researchers translate things like model output to tables in the final products. Additionally, versioning errors can be an issue here because some of the research artifacts from the previous phase may not reflect the most recent iteration of the analytical data.</dd>
 </dl>
 
-Importantly, this workflow is often **iterative**. For example, the researchers may only initially use a few variables and/or observations from the raw data to quickly get a skeleton analysis together with the key variables and models. From this point, they may then go back to the first phase to add in additional variables, observations, deal with missing values, etc. Good programming practices in setting up the structure of the workflow will make this iterative procsess easier later in the project.
+Importantly, this workflow should be **iterative** as earlier phases are revisited based on extensions or expansions in the project. For example, the researchers may only initially use a few variables and/or observations from the raw data to quickly get a skeleton analysis together with the key variables and models. From this point, they may then go back to the first phase to add in additional variables, observations, deal with missing values, etc. Good programming practices in setting up the structure of the workflow will make this iterative procsess easier later in the project.
 
 ### The Principles of a Reproducible Research Workflow
 
@@ -60,24 +60,19 @@ flowchart LR
 
 <dl>
   <dt>Raw Data</dt>
-  <dd>The external data to be analyzed. To ensure reproducibility, these files should never be edited and they should be placed in a dedicated subdirectory for raw data sources.</dd>
+  <dd>The external data to be analyzed. To ensure reproducibility, these files should never be edited and they should be placed in a dedicated subdirectory used only for raw data sources.</dd>
   <dt>Data Organization Scripts</dt>
   <dd>Script or scripts that transform/wrangle the original raw data into the analytical data that will actually be analyzed. This process may include recoding, subsetting, imputing missing values, merging, reshaping, etc.</dd>
   <dt>Analytical Data</dt>
-  <dd>The product of the data organization scripts. These files will typically be stored in binary format and should be placed in a different location than raw data to avoid confusion.</dd>
+  <dd>The product of the data organization scripts. These files will typically be stored in binary format and should be placed in a different location than raw data to avoid confusion. The analytical data is an *artifact* and thus a potential source of error.</dd>
   <dt>Analysis Scripts</dt>
   <dd>The scripts that load in the analytical data and perform the analysis which may involve creating tables and figures, summarizing, aggregating, and the creation of models, among other things.</dd>
   <dt>Reproducible Reports</dt>
-  <dd>Reports that will generate final products such as research manuscripts, reports, presentations, and posters. These run integrated code to produce consistent results programmatically (e.g. Quarto, R Markdown, or Sweave documents).</dd>
+  <dd>Reports that will generate final products such as research manuscripts, reports, presentations, and posters. These files run integrated code to produce consistent results programmatically (e.g. Quarto, R Markdown, or Sweave documents).</dd>
   <dt>Intermediate Output</dt>
-  <dd>Output created in the process of analysis. This could include log files, figure images, text output of model results, etc.</dd>
+  <dd>Output created in the process of analysis. This could include log files, figure images, text output of model results, etc. All of these files are *artifacts* and thus a potential source of error.</dd>
   <dt>Final Products</dt>
   <dd>Final polished products for external audience produced by the reproducible reports. This could include research manuscripts, reports, presentations, or posters.</dd>
 </dl>
 
-### What is real about your workflow?
-
-- Everything in green is what is real about your workflow. This includes all of the scripts, reproducible reports, and the raw data.
-- Everything in yellow is an artifact produced at a certain point in time by the things that are real (i.e. your scripts and your raw data). 
-
-If your workflow is reproducible then you should be able to delete all of the items in yellow at any time and exactly reproduce them via what is real.
+Everything shown above in green is the *real* part of your workflow. This includes the raw data, the scripts, and the reproducible reports. The remaining *yellow* parts are artifacts and should be reproducible at any point fom the real part of your workflow. You should feel comfortable deleting the yellow parts at any point because they can be reproduced by the green parts. In fact, you should make it a regular practice to delete all the yellow parts and rerun your analysis from the start on a regular basis to ensure artifacts are not affecting your results.
