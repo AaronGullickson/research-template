@@ -1,5 +1,5 @@
 
-This repository is a template repository for a research project using a [Quarto Project](https://quarto.org/docs/projects/quarto-projects.html) and a [Reproducible Research Workflow](#a-reproducible-research-workflow) geared for open science. This template serves as a good project base for anyone using R as their primarily language for conducting research, but could be retooled for other languages supported by [Quarto](https://quarto.org), like Python and Julia.
+This repository is a template repository for a research project using a [Quarto Project](https://quarto.org/docs/projects/quarto-projects.html) and a [Reproducible Research Workflow](#a-reproducible-research-workflow) geared for open science. This template serves as a good project base for anyone using R as their primary language for conducting research, but could be retooled for other languages supported by [Quarto](https://quarto.org), like Python and Julia.
 
 ## Quickstart
 
@@ -13,6 +13,7 @@ To start an actual research project with this template:
 6. From RStudio, open the `_quarto.yml` file and change the project title and author information. You can add multiple authors here if you like.
 7. Go to `utils/check_packages.R` and add or remove any packages based on what your project requires. Source this file in to make sure you have all the dependencies installed.
 8. In the upper right panel of RStudio, go to the Build tab and click "Render project." You will see how quarto runs through the entire project, script by script. Look at the `_products` directory for the output.
+9. Dump some raw data into into `data/data_raw` and start coding!
 
 You may also want to update the extensions that are included with the project when you start it. To do this type into the Terminal:
 
@@ -22,6 +23,17 @@ quarto update AaronGullickson/submittable-quarto
 ```
 
 ## A Reproducible Research Workflow
+
+This workflow assumes that this research project can generally be divided into three distinct phases. These phases are:
+
+dl>
+  <dt>Generating Analytical Data</dt>
+  <dd>In this phase, raw data sources are converted into an analytical dataset or datasets that provide the necessary variables and data cleaning for researchers to conduct the research. This step is often called "data cleaning" but can involve many different activities such as recoding variables, imputing missing values, subsetting data, aggregating data, merging two or more data sources, and reshaping data. Regardless of the specific activity, researchers should always **check themselves before they wreck themselves** to ensure none of these procedures create errors. 
+  
+Although sometimes characterized as the "drudgery" phase of analysis, this phase is absolutely critical to a successful data analysis. Moreover, the decisions made at this stage often reflect important conceptual and theoretical issues related to the broader research questions and thus it should not be seen as simple preparatory work for the actual analysis, but in fact, a key part of the overall project itself.</dd>
+    <dt>Performing the Analysis</dt>
+    <dd>In this phase, the researchers use the constructed analytical data to perform the main analysis. This may include, among other things, exploratory work using data visualizations, the creation of simple statistical summaries, the creation of complex models. In doing this, the researcher may create many data artifacts such as log files, model output, </dd>
+</dl>
 
 ```mermaid
 flowchart LR
