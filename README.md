@@ -96,4 +96,17 @@ quarto render
 
 ### Adding Additional Scripts
 
+For big projects a single `organize_data.qmd` and `analysis.qmd` file may not be sufficient. You can split each of those files into multiple files of the same type. If you do, you will need to update the `_quarto.yml` file to specify these files and the order in which they should be run in the `render` section. For example if you split `organize_data.qmd` into `organize_data_source1.qmd` and `organize_data_source2.qmd`, you would change that section to read:
+
+```yaml
+ render:
+    # if analysis is split into multiple docs, add them here
+    - analysis/organize_data_source1.qmd
+    - analysis/organize_data_source2.qmd
+    - analysis/analysis.qmd
+    - paper/
+    - presentation/
+    - "!bibliography/"
+```
+
 ### Handling Package Dependencies
