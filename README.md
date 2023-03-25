@@ -1,4 +1,26 @@
 
+This repository is a template repository for a research project using a [Quarto Project](https://quarto.org/docs/projects/quarto-projects.html) and a [Reproducible Research Workflow](#a-reproducible-research-workflow) geared for open science. This template serves as a good project base for anyone using R as their primarily language for conducting research, but could be retooled for other languages supported by [Quarto](https://quarto.org), like Python and Julia.
+
+## Quickstart
+
+To start an actual research project with this template:
+
+1. Click the green "Use this template" button above to create a new GitHub repository based on this template.
+2. From GitHub, change the README file contents to describe your project.
+3. Clone the generated repository to your own local machine. I usually do this via RStudio from File > New Project (or the Gelatinous Cube button), and then choose "From Version Control."
+4. Change the name of the `research-template.Rproj` file in the local repository to the name of your project.
+5. Open the project in RStudio. I usually do this by double-clicking the Rproj file.
+6. From RStudio, open the `_quarto.yml` file and change the project title and author information. You can add multiple authors here if you like.
+7. Go to `utils/check_packages.R` and add or remove any packages based on what your project requires. Source this file in to make sure you have all the dependencies installed.
+8. In the upper right panel of RStudio, go to the Build tab and click "Render project." You will see how quarto runs through the entire project, script by script. Look at the `_products` directory for the output.
+
+You may also want to update the extensions that are included with the project when you start it. To do this type into the Terminal:
+
+```bash
+quarto update AaronGullickson/aog-article-quarto
+quarto update AaronGullickson/submittable-quarto
+```
+
 ## A Reproducible Research Workflow
 
 ```mermaid
