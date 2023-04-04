@@ -5,9 +5,23 @@
 * analysis will not be affected by any artifacts.
 */
 
+//only run this script when the entire project is being rendered
+if (!Deno.env.get("QUARTO_PROJECT_RENDER_ALL")) {
+  Deno.exit();
+}
+
 //remove and replace the data_constructed directory
-Deno.removeSync("data/data_constructed", { recursive: true });
-Deno.mkdir("data/data_constructed");
+try {
+  Deno.removeSync("data/data_constructed", { recursive: true });
+  Deno.mkdir("data/data_constructed");
+} catch(error) {
+  //directory does not exist
+  Deno.mkdir("data/data_constructed");
+}
 
 //remove the _products directory
-Deno.removeSync("_products", { recursive: true });
+try {
+  Deno.removeSync("_products", { recursive: true });
+} catch(error) {
+  //directory does not exist
+}
