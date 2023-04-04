@@ -2,4 +2,7 @@ format:
   html:
     code-fold: true
     self-contained: true
+    toc: true
     theme: flatly
+execute: 
+  message: false
