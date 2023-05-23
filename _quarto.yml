@@ -1,9 +1,10 @@
 project:
   title: "Research Template"
+  output-dir: _products
+  execute-dir: project
   pre-render: 
     - utils/check_packages.R      # install required packages
     - utils/remove_artifacts.ts   # remove previously constructed files
-  output-dir: _products
   render:
     # if analysis is split into multiple docs, add them here
     - analysis/organize_data.qmd
