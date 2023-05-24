@@ -4,6 +4,8 @@
 .Rhistory
 .Rdata
 .DS_Store
+# Other junk files
+desktop.ini
 # Ignore all the junk created by LaTeX
 *.aux
 *.out
