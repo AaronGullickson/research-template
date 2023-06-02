@@ -1,3 +1,18 @@
+project:
+  title: "Research Template"
+  execute-dir: project
+  output-dir: _products
+  pre-render: 
+    - utils/check_packages.R      # install required packages
+    - utils/remove_artifacts.ts   # remove previously constructed files
+  render:
+    # if analysis is split into multiple docs, add them here
+    - analysis/organize_data.qmd
+    - analysis/analysis.qmd
+    - paper/
+    - presentation/
+    - "!bibliography/"
+
 author:
   - name: Aaron Gullickson
     orcid: 0000-0001-7237-8131
