@@ -3,6 +3,12 @@ title: "Research Analysis Notebook"
 ---
 
 ```{r}
+#label: timestamp-start
+
+timestamp()
+```
+
+```{r}
 #| label: setup
 #| include: false
 library(here)
@@ -11,3 +17,9 @@ source(here("utils","functions.R"))
 ```
 
 This quarto doc is used to analyze the data.
+
+```{r}
+#label: timestamp-end
+
+timestamp()
+```
