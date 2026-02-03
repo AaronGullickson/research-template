@@ -11,5 +11,6 @@
 # example code chunk in analysis/organize_data.qmd for how it can be used.
 ##############################################
 
-version: '2026-02-02' # use a date or uid
+# any consistent string will work for version (e.g. date, v1, v2, uuid)
+version: 'v1'
 description: 'Some description of latest data'
