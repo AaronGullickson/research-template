@@ -36,9 +36,10 @@ _docs/**
 
 # You may want to adjust that behavior if you want to serve up the output as a 
 # website from the remote repository, e.g. with GitHub pages or Netlify. In that
-# case you can uncomment out the line below to put html under version control
+# case you can uncomment out the two lines below to put html under version control
 # or comment out the line above to put everything in the _docs folder under
 # version control.
+#!_docs/**/
 #!_docs/**/*.html
 
 # Handling data -------------------------------------------------------------
