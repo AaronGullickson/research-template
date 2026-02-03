@@ -17,6 +17,7 @@ project:
     - presentation/
     - "!bibliography/"
 
+# list all authors here in separate bullets
 author:
   - name: Aaron Gullickson
     orcid: 0000-0001-7237-8131
@@ -25,15 +26,14 @@ author:
     attributes:
       corresponding: true
     affiliations:
-      - id: uo
-        name: University of Oregon
+      - name: University of Oregon
         department: Sociology
         address: 727 PLC
         city: Eugene
         region: OR
         country: USA
         postal-code: 97405
-  
+
 execute: 
   freeze: false
   
