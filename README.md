@@ -28,7 +28,7 @@ quarto update AaronGullickson/submittable-quarto
 quarto update pandoc-ext/abstract-section
 ```
 
-## Using This Workflow {#using-this-workflow}
+## Using This Workflow
 
 This workflow follows general principles outlined in more detail below. Generally the research process will proceed as follows:
 
