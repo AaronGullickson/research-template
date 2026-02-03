@@ -1,0 +1,7 @@
+# Git Attributes file to handle line endings for cross-platform work
+
+# Handle line endings automatically for all text files
+* text=auto
+
+# Explicitly set EOL for specific file types
+*.sh text eol=lf
