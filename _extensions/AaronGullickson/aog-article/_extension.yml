@@ -16,8 +16,7 @@ contributes:
       papersize: letter
       fontsize: 12pt   
       geometry: margin=1in
-      fig-height: 4     # smaller fig heights make floating easier
-      fig-width: 7.5    # set to the (full width - margins) of letter   
+      fig-width: 6.5   # set to the (full width - margins) of letter   
       fig-pos: "!t"
       colorlinks: true
       urlcolor: red

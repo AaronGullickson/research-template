@@ -1,9 +1,13 @@
 ---
+# basic information
 title: "Paper Manuscript"
-shorttitle: "Paper"
 abstract: An Abstract
 keywords: [keyword1, keyword2]
 thanks: Thanks to everyone for checking this out.
+
+# information used by aog-article format
+shorttitle: "Paper"
+shortauthors: Gullickson
 
 # bibliography information. You can add additional CSL styles to the 
 # bibliography directory and use them. 
@@ -14,21 +18,16 @@ csl: ../bibliography/chicago-parenthetical.csl
 # default formats. I use a custom aog-article-pdf available as an extension, but
 # this can be replaced with the default pdf format. The submittable extenstion
 # also gives me submittable-pdf and submittable-docx for journal submission
-# entries, but those are commented out until I need them.
+# entries, but I leave shoe commented out until I need them.
 format:
   aog-article-pdf:
     keep-tex: false
-    fig-width: 7.5 # set to the (full width - margins) of letter   
-  submittable-pdf:
-    keep-tex: false
-    fig-pos: "!t"
-  submittable-docx:
-    fig-format: pdf   # for sharper images
-    # figure sizing is a pain in docx, but this works pretty well. Theoretically
-    # with 1 inch margins on 8.5 by 11 we should have 6.5 inches for width but
-    # there is other word junk there.
-    out-width: "100%"
-    fig-width: 6.25
+  #submittable-pdf:
+  #  keep-tex: false
+  #  titlepage: true
+  #  endnotes: false
+  #  fig-pos: "!t"
+  #submittable-docx: default
 ---
 
 ```{r}
