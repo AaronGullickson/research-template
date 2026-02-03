@@ -1,0 +1,38 @@
+---
+title: "Site Index, Unnamed Project"
+format: 
+  html:
+    self-contained: true
+---
+
+<!-- This file can be used to create a website of all of the desired 
+     quarto docs from the _docs directory. To do that:
+     
+       1. adjust the table below to include or exxclue any desired products. 
+          All products committed and pushed will still be available on the 
+          website, but you will have to know the URL, so the table provides 
+          convenient links.
+       2. Uncomment out the index.qmd rendering line in _quarto.yml and render
+          this document (or build the whole project).
+       3. Remove the .gitignore on the _docs directory and commit
+          and push desired files there to GitHub.
+       4. Set up a netlify website that links to the _docs directory 
+          of this repo. You are done!
+      
+      You an also set this up to work with GitHub Pages, but unless you 
+      have a paid account, it will only work for public repositories. If
+      you decide to go this route, it might make sense to rename the output 
+      directory from _docs to docs and set GH-pages to treat that as the root
+      directory, for ease of use. 
+      
+      You can also add more information here about your project just like you
+      would for any quarto document.
+-->
+
+| Document                                           |
+|----------------------------------------------------|
+| [Organizing Data](analysis/organize_data.html)     |
+| [Analysis](analysis/analysis.html)                 |
+| [Presentation](presentation/presentation.html)     |
+<!--| [Manuscript](paper/main_manuscript.pdf)            |-->
+<!--| [Supplementary Materials](paper/supp_materials.pdf)|-->

@@ -19,6 +19,8 @@ project:
     - analysis/analysis.qmd
     - paper/
     - presentation/
+    # uncomment out next line to get a site index for your project
+    #- index.qmd
     - "!bibliography/"
     
 # bibliography information. You can add additional CSL styles to the 
