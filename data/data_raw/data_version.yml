@@ -6,18 +6,9 @@
 # cases, the organize_data.qmd can be used to download the data to each 
 # collaborator's local machine. However, to avoid re-downloading the data, 
 # each collaborator can be made to track which version of the data they
-# have with something like after downloading data:
-# 
-# write_yaml(list(version = repo_version), here("data", "data_raw", "data_version_local.yml"))
-# 
-# where repo_version is the version listed here. Whenever the organize_data
-# script is re-run, it should then check version here against version in 
-# data_version_local.yml and only re-download data when they are different.
-# 
-# Whenever the underlying data change and a re-download is necessary for all
-# collaborators, just change the version value below and commit and push the 
-# change.
-# 
+# have and this version can be checked against the "official" version here
+# which will indicate whether they need to re-download the data. See the 
+# example code chunk in analysis/organize_data.qmd for how it can be used.
 ##############################################
 
 version: '2026-02-02' # use a date or uid
