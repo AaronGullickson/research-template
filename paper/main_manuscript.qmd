@@ -9,19 +9,18 @@ thanks: Thanks to everyone for checking this out.
 shorttitle: "Paper"
 shortauthors: Gullickson
 
-# bibliography information. You can add additional CSL styles to the 
-# bibliography directory and use them. 
-reference-section-title: References
-bibliography: ../bibliography/project.bib
-csl: ../bibliography/chicago-parenthetical.csl
+## bibliographic information is in the _quarto.yml for the project ##
 
-# default formats. I use a custom aog-article-pdf available as an extension, but
-# this can be replaced with the default pdf format. The submittable extenstion
+# default formats
+# I use a custom aog-article-pdf available as an extension, but this can be 
+# replaced with the default pdf format. The submittable extenstion
 # also gives me submittable-pdf and submittable-docx for journal submission
-# entries, but I leave shoe commented out until I need them.
+# entries, but I leave those commented out until I need them.
 format:
   aog-article-pdf:
     keep-tex: false
+  #pdf: 
+  #  keep-tex: false
   #submittable-pdf:
   #  keep-tex: false
   #  titlepage: true

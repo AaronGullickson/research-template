@@ -1,19 +1,14 @@
 ---
 title: "Supplementary Materials"
 
-# we might need bibliographic references here
-reference-section-title: References
-bibliography: ../bibliography/project.bib
-csl: ../bibliography/chicago-parenthetical.csl
-
 # just aog-article-pdf for format
 format:
   aog-article-pdf:
     keep-tex: false
-    fig-width: 7.5 # set to the (full width - margins) of letter   
 
 # this command adds an "S" prefix to all table and figure numbering
 header-includes:
+  - \renewcommand{\thetable}{S\arabic{table}}
   - \renewcommand{\thefigure}{S\arabic{figure}}
 ---
 

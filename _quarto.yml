@@ -20,6 +20,13 @@ project:
     - paper/
     - presentation/
     - "!bibliography/"
+    
+# bibliography information. You can add additional CSL styles to the 
+# bibliography directory and use them.
+reference-section-title: References
+bibliography: bibliography/project.bib
+csl: bibliography/chicago-parenthetical.csl
+
 
 # list all authors here in separate bullets
 author:
