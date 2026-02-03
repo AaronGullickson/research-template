@@ -13,7 +13,7 @@ To start an actual research project with this template:
 5.  Open the project in RStudio. I usually do this by double-clicking the Rproj file.
 6.  From RStudio, open the `_quarto.yml` file and change the project title and author information. You can add multiple authors here if you like.
 7.  Go to `utils/check_packages.R` and add or remove any packages based on what your project requires. Source this file in to make sure you have all the dependencies installed.
-8.  In the upper right panel of RStudio, go to the Build tab and click "Render project." You will see how quarto runs through the entire project, script by script. Look at the `_products` directory for the output.
+8.  In the upper right panel of RStudio, go to the Build tab and click "Render project." You will see how quarto runs through the entire project, script by script. Look at the `_docs` directory for the output.
 9.  Dump some raw data into `data/data_raw` and start coding! You can also learn more about how to [use this workflow](#using-this-workflow) below.
 
 You may also want to update the extensions that are included with the project when you start it. To do this type into the Terminal:
@@ -108,7 +108,7 @@ This workflow follows the general principles outlined above. Generally the resea
 3.  Use the `analysis/analysis.qmd` to conduct the analysis. This will produce a lab notebook in HTML format. Sometimes, when it takes a long time to run models or other things, I may save some of the output as RData files and place it in the same `data/data_constructed` folder.
 4.  Use the quarto documents in the `paper` directory and/or the `presentation` directory to create papers and presentations, respectively. I will often pull code chunks from the `analysis.qmd` to these files as a starting point for final tables and figures. By default, I use my own [custom template](https://github.com/AaronGullickson/aog-article-template) to produce manuscript PDF files, but you can switch this to another template of your choice. The `bibliography` directory contains a Bibtex file for the project that can be exported from other software or built from within the quarto documents themselves. You can also place your preferred [CSL files](https://www.zotero.org/styles) here.
 
-The output of all rendered quarto documents will be placed in the `_products` directory. This directory along with `data/data_constructed` contain the artifacts from the workflow.
+The output of all rendered quarto documents will be placed in the `_docs` directory. This directory along with `data/data_constructed` contain the artifacts from the workflow.
 
 In everyday practice, individual files will be rendered separately, but the entire project can also be rendered. The user should periodically do this because it will automatically delete any prior artifacts and start from scratch, ensuring that all rendered output is up to date with the most current iteration of the scripts. The project can be rendered from the `Build` tab in the upper right panel of RStudio, or from the command line of the base project directory:
 

@@ -1,6 +1,10 @@
 project:
   title: "Research Template"
-  output-dir: _products
+  # the default output directory is _docs. If you want to serve up 
+  # the results here from GitHub Pages, it might be easier to use docs,
+  # but I prefer the underscore to keep consistent with quarto project
+  # syntax
+  output-dir: _docs
   execute-dir: project
   pre-render: 
     - utils/check_packages.R      # install required packages
