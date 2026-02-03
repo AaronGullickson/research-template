@@ -1,3 +1,4 @@
+# We use the revealjs format for presentations.
 format:
   revealjs:
     theme: blood

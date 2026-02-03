@@ -1,8 +1,13 @@
+# We only use HTML for analysis files. Its so much easier than any other format.
+# Code-folding and toc help with navigation and self-contained makes it all 
+# more portable.
 format:
   html:
     code-fold: true
     self-contained: true
     toc: true
     theme: flatly
+# execution parameters - we don't show messages but do leave warnings so we
+# don't miss important stuff
 execute: 
   message: false

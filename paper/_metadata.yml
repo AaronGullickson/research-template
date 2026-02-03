@@ -1,3 +1,6 @@
+# execution parameters
+# eval can be switched off to just get the text of the paper without any 
+# calculations. All messages are turned off because this is a final document
 execute: 
   eval: true
   echo: false
