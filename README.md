@@ -18,7 +18,7 @@ To start an actual research project with this template:
 6.  Go to `utils/check_packages.R` and add any packages based on what your project requires. Source this file in to make sure you have all the dependencies installed.
 7.  In the upper right panel of RStudio, go to the Build tab and click "Render project." You will see how quarto runs through the entire project, script by script. Look at the `_docs` directory for the output.
 8.  Change the README file contents to describe your project.
-9.  Dump some raw data into `data/data_raw` and start coding! You can also learn more about how to [use this workflow](#using-this-workflow) below.
+9.  Dump some raw data into `data/data_raw` and start coding! You can also learn more about how to use this workflow below.
 
 You may also want to update the extensions that are included with the project when you start it to make sure they are the most up-to-date. To do this type into the Terminal:
 
@@ -30,7 +30,7 @@ quarto update pandoc-ext/abstract-section
 
 ## Using This Workflow {#using-this-workflow}
 
-This workflow follows the general principles outlined in more detail [below](#a-reproducible-research-workflow). Generally the research process will proceed as follows:
+This workflow follows general principles outlined in more detail below. Generally the research process will proceed as follows:
 
 1.  Add raw data sources to `data/data_raw`. When I am using multiple data sources, I often place these in sub-directories. I also usually document each data source in the README within the `data_raw` directory. Only raw data should be kept in this directory. In some cases, your data may be too large for GitHub. I detail below a setup in this template for dealing with that issue.
 2.  Use the `analysis/organize_data.qmd` file to construct analytical data from the raw data. I prefer to do this in a quarto document rather than a plain R script because then I get essentially a research log (HTML format) in which I can keep track of all my tests to ensure that my data cleaning worked as intended. Typically, you will save the final analytical data into an `RData` file. This file (or files) should always be placed in `data/data_constructed`
@@ -100,7 +100,7 @@ Generally, this is a preferable practice for two reasons. First, your data may h
 
 For collaborative projects, it can be a pain not to have a shared source for large data sources, which often forces collaborators to manually pass back and forth the data files. This template has a system set up to handle that more efficiently. If that applies to you (i.e. collaborative project with big data), then read on.
 
-My approach is to place the raw data sources (preferably after [gzipping](https://www.gzip.org/)them) in Google Drive.[^1] I set their permission to be "anyone with the link" and then I grab the UUID from the link itself (the sequence of random numbers and letters). You can then use the <https://googledrive.tidyverse.org/> package to download the data. The code would look something like this:
+My approach is to place the raw data sources (preferably after [gzipping](https://www.gzip.org/) them) in Google Drive.[^1] I set their permission to be "anyone with the link" and then I grab the UUID from the link itself (the sequence of random numbers and letters). You can then use the [googledrive](https://googledrive.tidyverse.org/) package to download the data. The code would look something like this:
 
 [^1]: You could also use other cloud storage services like Dropbox which have associated R libraries to handle their API, but that is beyond what I will cover here.
 
