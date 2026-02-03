@@ -160,7 +160,7 @@ The code checks the "official" version in `data_version.yml` against a local ver
 
 If the data are updated, then replace the UUID for downloading data from Google Drive and update the `version` field in `data_version.yml`. Then commit and push those changes. Once collaborators pull in those changes, they will download the data the next time they run `organize_data.qmd`.
 
-## A Reproducible Research Workflow {#a-reproducible-research-workflow}
+## A Reproducible Research Workflow
 
 ### Three Phases
 
