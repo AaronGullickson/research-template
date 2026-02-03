@@ -9,7 +9,7 @@ packages = c(
   "here", # absolute requirement always
   "knitr", # for processing quarto
   "readr","haven", "fs", "yaml", # I/O
-  "tidyverse","lubridate","broom", #tidyverse and friends
+  "tidyverse", "broom", #tidyverse and friends
   "modelsummary","gt" # for table output
 )
 
