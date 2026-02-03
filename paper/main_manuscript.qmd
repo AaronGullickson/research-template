@@ -1,7 +1,6 @@
 ---
 # basic information
 title: "Paper Manuscript"
-abstract: An Abstract
 keywords: [keyword1, keyword2]
 thanks: Thanks to everyone for checking this out.
 
@@ -10,6 +9,13 @@ shorttitle: "Paper"
 shortauthors: Gullickson
 
 ## bibliographic information is in the _quarto.yml for the project ##
+
+# I use the abstact-section extension to write abstracts as a normal section
+# of the document. If you prefer to write abstracts in yaml, you can comment
+# out the filter and uncomment the abstract line.
+#abstract: An Abstract
+filters:
+  - abstract-section
 
 # default formats
 # I use a custom aog-article-pdf available as an extension, but this can be 
@@ -36,6 +42,10 @@ library(here)
 source(here("utils","check_packages.R"))
 source(here("utils","functions.R"))
 ```
+
+# Abstract
+
+Abstract goes here.
 
 # Introduction
 
