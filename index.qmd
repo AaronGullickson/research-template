@@ -5,18 +5,33 @@ format:
     self-contained: true
 ---
 
+```{r}
+#| label: timestamp
+
+timestamp()
+```
+
+# Important Documents
+
+| Document                                           |
+|----------------------------------------------------|
+| [Organizing Data](analysis/organize_data.html)     |
+| [Analysis](analysis/analysis.html)                 |
+| [Presentation](presentation/presentation.html)     |
+<!--| [Manuscript](paper/main_manuscript.pdf)            |-->
+<!--| [Supplementary Materials](paper/supp_materials.pdf)|-->
+
+
 <!-- This file can be used to create a website of all of the desired 
      quarto docs from the _docs directory. To do that:
      
-       1. adjust the table below to include or exxclue any desired products. 
+       1. adjust the table below to include or exclude any desired products. 
           All products committed and pushed will still be available on the 
           website, but you will have to know the URL, so the table provides 
           convenient links.
-       2. Uncomment out the index.qmd rendering line in _quarto.yml and render
-          this document (or build the whole project).
-       3. Remove the .gitignore on the _docs directory and commit
+       2. Remove the .gitignore on the _docs directory and commit
           and push desired files there to GitHub.
-       4. Set up a netlify website that links to the _docs directory 
+       3. Set up a netlify website that links to the _docs directory 
           of this repo. You are done!
       
       You an also set this up to work with GitHub Pages, but unless you 
@@ -29,10 +44,19 @@ format:
       would for any quarto document.
 -->
 
-| Document                                           |
-|----------------------------------------------------|
-| [Organizing Data](analysis/organize_data.html)     |
-| [Analysis](analysis/analysis.html)                 |
-| [Presentation](presentation/presentation.html)     |
-<!--| [Manuscript](paper/main_manuscript.pdf)            |-->
-<!--| [Supplementary Materials](paper/supp_materials.pdf)|-->
+
+# R Packages and Session Information
+
+```{r}
+#| label: load-packages
+#| output: false
+
+library(here)
+source(here("utils", "check_packages.R"))
+```
+
+```{r}
+#| label: report-packages
+
+sessionInfo()
+```

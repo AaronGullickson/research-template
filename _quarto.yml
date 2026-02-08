@@ -12,6 +12,7 @@ project:
     - utils/check_packages.R      # install required packages
     - utils/remove_artifacts.R    # remove previously constructed files
   render:
+    - index.qmd
     # if analysis is split into multiple docs, add them here, specifying 
     # individual qmd files also allows us to ensure proper ordering of 
     # when they run (e.g. organize_data before analysis)
@@ -20,7 +21,6 @@ project:
     - paper/
     - presentation/
     # uncomment out next line to get a site index for your project
-    #- index.qmd
     - "!bibliography/"
     
 # bibliography information. You can add additional CSL styles to the 
