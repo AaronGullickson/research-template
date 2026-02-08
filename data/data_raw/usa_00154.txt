@@ -1,0 +1,1049 @@
+Description: Revision of (Extract for template example)
+Samples selected:
+      2015 ACS
+      2016 ACS
+      2017 ACS
+      2018 ACS
+      2019 ACS
+File Type:                    rectangular
+Case Selection:               Yes
+  Variable                         Columns        Len   2015    2016    2017    2018    2019    
+  YEAR                         H   1-4            4     X       X       X       X       X       
+  SAMPLE                       H   5-10           6     X       X       X       X       X       
+  SERIAL                       H  11-18           8     X       X       X       X       X       
+  CBSERIAL                     H  19-31          13     X       X       X       X       X       
+  HHWT                         H  32-41          10     X       X       X       X       X       
+  CLUSTER                      H  42-54          13     X       X       X       X       X       
+  STRATA                       H  55-66          12     X       X       X       X       X       
+  GQ                           H  67              1     X       X       X       X       X       
+  PERNUM                       P  68-71           4     X       X       X       X       X       
+  PERWT                        P  72-81          10     X       X       X       X       X       
+  SEX                          P  82              1     X       X       X       X       X       
+  AGE                          P  83-85           3     X       X       X       X       X       
+  MARST                        P  86              1     X       X       X       X       X       
+  RACE                         P  87              1     X       X       X       X       X       
+  RACED                        P  88-90           3     X       X       X       X       X       
+  HISPAN                       P  91              1     X       X       X       X       X       
+  HISPAND                      P  92-94           3     X       X       X       X       X       
+  HCOVANY                      P  95              1     X       X       X       X       X       
+  EDUC                         P  96-97           2     X       X       X       X       X       
+  EDUCD                        P  98-100          3     X       X       X       X       X       
+
+Variable Availability Key:
+All Years X - available in this sample
+All Years . - not available in this sample
+
+Case Selections:
+P AGE      018 18
+P AGE      019 19
+P AGE      020 20
+P AGE      021 21
+P AGE      022 22
+P AGE      023 23
+P AGE      024 24
+P AGE      025 25
+P AGE      026 26
+P AGE      027 27
+P AGE      028 28
+P AGE      029 29
+P AGE      030 30
+P AGE      031 31
+P AGE      032 32
+P AGE      033 33
+P AGE      034 34
+P AGE      035 35
+P AGE      036 36
+P AGE      037 37
+P AGE      038 38
+P AGE      039 39
+P AGE      040 40
+P AGE      041 41
+P AGE      042 42
+P AGE      043 43
+P AGE      044 44
+P AGE      045 45
+P AGE      046 46
+P AGE      047 47
+P AGE      048 48
+P AGE      049 49
+P AGE      050 50
+P AGE      051 51
+P AGE      052 52
+P AGE      053 53
+P AGE      054 54
+P AGE      055 55
+P AGE      056 56
+P AGE      057 57
+P AGE      058 58
+P AGE      059 59
+P AGE      060 60
+P AGE      061 61
+P AGE      062 62
+P AGE      063 63
+P AGE      064 64
+P AGE      065 65
+P AGE      066 66
+P AGE      067 67
+P AGE      068 68
+P AGE      069 69
+P AGE      070 70
+P AGE      071 71
+P AGE      072 72
+P AGE      073 73
+P AGE      074 74
+P AGE      075 75
+P AGE      076 76
+P AGE      077 77
+P AGE      078 78
+P AGE      079 79
+P AGE      080 80
+P AGE      081 81
+P AGE      082 82
+P AGE      083 83
+P AGE      084 84
+P AGE      085 85
+P AGE      086 86
+P AGE      087 87
+P AGE      088 88
+P AGE      089 89
+P AGE      090 90 (90+ in 1980 and 1990)
+P AGE      091 91
+P AGE      092 92
+P AGE      093 93
+P AGE      094 94
+P AGE      095 95
+P AGE      096 96
+P AGE      097 97
+P AGE      098 98
+P AGE      099 99
+P AGE      100 100 (100+ in 1960-1970)
+P AGE      101 101
+P AGE      102 102
+P AGE      103 103
+P AGE      104 104
+P AGE      105 105
+P AGE      106 106
+P AGE      107 107
+P AGE      108 108
+P AGE      109 109
+P AGE      110 110
+P AGE      111 111
+P AGE      112 112 (112+ in the 1980 internal data)
+P AGE      113 113
+P AGE      114 114
+P AGE      115 115 (115+ in the 1990 internal data)
+P AGE      116 116
+P AGE      117 117
+P AGE      118 118
+P AGE      119 119
+P AGE      120 120
+P AGE      121 121
+P AGE      122 122
+P AGE      123 123
+P AGE      124 124
+P AGE      125 125
+P AGE      126 126
+P AGE      127 127
+P AGE      128 128
+P AGE      129 129
+P AGE      130 130
+P AGE      131 131
+P AGE      132 132
+P AGE      133 133
+P AGE      134 134
+P AGE      135 135
+P AGE      140 140
+RECTYPE   Record type
+H         Household
+P         Person
+
+YEAR                Census year
+1850                1850
+1860                1860
+1870                1870
+1880                1880
+1900                1900
+1910                1910
+1920                1920
+1930                1930
+1940                1940
+1950                1950
+1960                1960
+1970                1970
+1980                1980
+1990                1990
+2000                2000
+2001                2001
+2002                2002
+2003                2003
+2004                2004
+2005                2005
+2006                2006
+2007                2007
+2008                2008
+2009                2009
+2010                2010
+2011                2011
+2012                2012
+2013                2013
+2014                2014
+2015                2015
+2016                2016
+2017                2017
+2018                2018
+2019                2019
+2020                2020
+2021                2021
+2022                2022
+2023                2023
+2024                2024
+
+SAMPLE              IPUMS sample identifier
+202402              2024 PRCS
+202401              2024 ACS
+202304              2019-2023, PRCS 5-year
+202303              2019-2023, ACS 5-year
+202302              2023 PRCS
+202301              2023 ACS
+202204              2018-2022, PRCS 5-year
+202203              2018-2022, ACS 5-year
+202202              2022 PRCS
+202201              2022 ACS
+202104              2017-2021, PRCS 5-year
+202103              2017-2021, ACS 5-year
+202102              2021 PRCS
+202101              2021 ACS
+202004              2016-2020, PRCS 5-year
+202003              2016-2020, ACS 5-year
+202001              2020 ACS
+201904              2015-2019, PRCS 5-year
+201903              2015-2019, ACS 5-year
+201902              2019 PRCS
+201901              2019 ACS
+201804              2014-2018, PRCS 5-year
+201803              2014-2018, ACS 5-year
+201802              2018 PRCS
+201801              2018 ACS
+201704              2013-2017, PRCS 5-year
+201703              2013-2017, ACS 5-year
+201702              2017 PRCS
+201701              2017 ACS
+201604              2012-2016, PRCS 5-year
+201603              2012-2016, ACS 5-year
+201602              2016 PRCS
+201601              2016 ACS
+201504              2011-2015, PRCS 5-year
+201503              2011-2015, ACS 5-year
+201502              2015 PRCS
+201501              2015 ACS
+201404              2010-2014, PRCS 5-year
+201403              2010-2014, ACS 5-year
+201402              2014 PRCS
+201401              2014 ACS
+201306              2009-2013, PRCS 5-year
+201305              2009-2013, ACS 5-year
+201304              2011-2013, PRCS 3-year
+201303              2011-2013, ACS 3-year
+201302              2013 PRCS
+201301              2013 ACS
+201206              2008-2012, PRCS 5-year
+201205              2008-2012, ACS 5-year
+201204              2010-2012, PRCS 3-year
+201203              2010-2012, ACS 3-year
+201202              2012 PRCS
+201201              2012 ACS
+201106              2007-2011, PRCS 5-year
+201105              2007-2011, ACS 5-year
+201104              2009-2011, PRCS 3-year
+201103              2009-2011, ACS 3-year
+201102              2011 PRCS
+201101              2011 ACS
+201008              2010 Puerto Rico 10%
+201007              2010 10%
+201006              2006-2010, PRCS 5-year
+201005              2006-2010, ACS 5-year
+201004              2008-2010, PRCS 3-year
+201003              2008-2010, ACS 3-year
+201002              2010 PRCS
+201001              2010 ACS
+200906              2005-2009, PRCS 5-year
+200905              2005-2009, ACS 5-year
+200904              2007-2009, PRCS 3-year
+200903              2007-2009, ACS 3-year
+200902              2009 PRCS
+200901              2009 ACS
+200804              2006-2008, PRCS 3-year
+200803              2006-2008, ACS 3-year
+200802              2008 PRCS
+200801              2008 ACS
+200704              2005-2007, PRCS 3-year
+200703              2005-2007, ACS 3-year
+200702              2007 PRCS
+200701              2007 ACS
+200602              2006 PRCS
+200601              2006 ACS
+200502              2005 PRCS
+200501              2005 ACS
+200401              2004 ACS
+200301              2003 ACS
+200201              2002 ACS
+200101              2001 ACS
+200008              2000 Puerto Rico 1%
+200007              2000 1%
+200006              2000 Puerto Rico 1% sample (old version)
+200005              2000 Puerto Rico 5%
+200004              2000 ACS
+200003              2000 Unweighted 1%
+200002              2000 1% sample (old version)
+200001              2000 5%
+199007              1990 Puerto Rico 1%
+199006              1990 Puerto Rico 5%
+199005              1990 Labor Market Area
+199004              1990 Elderly
+199003              1990 Unweighted 1%
+199002              1990 1%
+199001              1990 5%
+198007              1980 Puerto Rico 1%
+198006              1980 Puerto Rico 5%
+198005              1980 Detailed metro/non-metro
+198004              1980 Labor Market Area
+198003              1980 Urban/Rural
+198002              1980 1%
+198001              1980 5%
+197009              1970 Puerto Rico Neighborhood
+197008              1970 Puerto Rico Municipio
+197007              1970 Puerto Rico State
+197006              1970 Form 2 Neighborhood
+197005              1970 Form 1 Neighborhood
+197004              1970 Form 2 Metro
+197003              1970 Form 1 Metro
+197002              1970 Form 2 State
+197001              1970 Form 1 State
+196002              1960 5%
+196001              1960 1%
+195002              1950 100% database
+195001              1950 1%
+194002              1940 100% database
+194001              1940 1%
+193004              1930 100% database
+193003              1930 Puerto Rico
+193002              1930 5%
+193001              1930 1%
+192003              1920 100% database
+192002              1920 Puerto Rico sample
+192001              1920 1%
+191004              1910 100% database
+191003              1910 1.4% sample with oversamples
+191002              1910 1%
+191001              1910 Puerto Rico
+190004              1900 100% database
+190003              1900 1% sample with oversamples
+190002              1900 1%
+190001              1900 5%
+188003              1880 100% database
+188002              1880 10%
+188001              1880 1%
+187003              1870 100% database
+187002              1870 1% sample with black oversample
+187001              1870 1%
+186003              1860 100% database
+186002              1860 1% sample with black oversample
+186001              1860 1%
+185002              1850 100% database
+185001              1850 1%
+
+GQ                  Group quarters status
+0                   Vacant unit
+                    Households:
+1                   Households under 1970 definition
+2                   Additional households under 1990 definition
+                    Group Quarters:
+3                   Group quarters--Institutions
+4                   Other group quarters
+5                   Additional households under 2000 definition
+6                   Fragment
+
+SEX                 Sex
+1                   Male
+2                   Female
+9                   Missing/blank
+
+AGE                 Age
+000                 Less than 1 year old
+001                 1
+002                 2
+003                 3
+004                 4
+005                 5
+006                 6
+007                 7
+008                 8
+009                 9
+010                 10
+011                 11
+012                 12
+013                 13
+014                 14
+015                 15
+016                 16
+017                 17
+018                 18
+019                 19
+020                 20
+021                 21
+022                 22
+023                 23
+024                 24
+025                 25
+026                 26
+027                 27
+028                 28
+029                 29
+030                 30
+031                 31
+032                 32
+033                 33
+034                 34
+035                 35
+036                 36
+037                 37
+038                 38
+039                 39
+040                 40
+041                 41
+042                 42
+043                 43
+044                 44
+045                 45
+046                 46
+047                 47
+048                 48
+049                 49
+050                 50
+051                 51
+052                 52
+053                 53
+054                 54
+055                 55
+056                 56
+057                 57
+058                 58
+059                 59
+060                 60
+061                 61
+062                 62
+063                 63
+064                 64
+065                 65
+066                 66
+067                 67
+068                 68
+069                 69
+070                 70
+071                 71
+072                 72
+073                 73
+074                 74
+075                 75
+076                 76
+077                 77
+078                 78
+079                 79
+080                 80
+081                 81
+082                 82
+083                 83
+084                 84
+085                 85
+086                 86
+087                 87
+088                 88
+089                 89
+090                 90 (90+ in 1980 and 1990)
+091                 91
+092                 92
+093                 93
+094                 94
+095                 95
+096                 96
+097                 97
+098                 98
+099                 99
+100                 100 (100+ in 1960-1970)
+101                 101
+102                 102
+103                 103
+104                 104
+105                 105
+106                 106
+107                 107
+108                 108
+109                 109
+110                 110
+111                 111
+112                 112 (112+ in the 1980 internal data)
+113                 113
+114                 114
+115                 115 (115+ in the 1990 internal data)
+116                 116
+117                 117
+118                 118
+119                 119
+120                 120
+121                 121
+122                 122
+123                 123
+124                 124
+125                 125
+126                 126
+127                 127
+128                 128
+129                 129
+130                 130
+131                 131
+132                 132
+133                 133
+134                 134
+135                 135
+140                 140
+999                 Missing
+
+MARST               Marital status
+1                   Married, spouse present
+2                   Married, spouse absent
+3                   Separated
+4                   Divorced
+5                   Widowed
+6                   Never married/single
+9                   Blank, missing
+
+RACE                Race [general version]
+1                   White
+2                   Black/African American
+3                   American Indian or Alaska Native
+4                   Chinese
+5                   Japanese
+6                   Other Asian or Pacific Islander
+7                   Other race, nec
+8                   Two major races
+9                   Three or more major races
+
+RACED               Race [detailed version]
+                    ONE MAJOR RACE GROUP
+100                 White
+101                 Albanian alone
+102                 Armenian alone
+103                 Austrian alone
+104                 Basque alone
+105                 Belarusian alone
+106                 Belgian alone
+107                 Bosnian and Herzegovinian alone
+108                 British alone
+109                 British Islander alone
+110                 Spanish write_in
+111                 Bulgarian alone
+112                 Celtic alone
+113                 Croatian alone
+114                 Czech alone
+115                 Danish alone
+116                 Dutch alone
+117                 English alone
+118                 Estonian alone
+119                 Finnish alone
+120                 Blank (white)
+121                 French alone
+122                 Georgian alone
+123                 German alone
+124                 Greek alone
+125                 Hungarian alone
+126                 Icelandic alone
+127                 Irish alone
+128                 Italian alone
+129                 Latvian alone
+130                 Portuguese
+131                 Lithuanian alone
+132                 Luxembourger alone
+133                 Macedonian alone
+134                 Maltese alone
+135                 Moldovan alone
+136                 Montenegrin alone
+137                 Norwegian alone
+138                 Polish alone
+139                 Romanian alone
+140                 Mexican (1930)
+141                 Russian alone
+142                 Scandinavian alone
+143                 Scots-Irish alone
+144                 Scottish alone
+145                 Serbian alone
+146                 Slavic alone
+147                 Slovak alone
+148                 Slovenian alone
+149                 Swedish alone
+150                 Puerto Rican
+151                 Swiss alone
+152                 Turkish alone
+153                 Ukrainian alone
+154                 Welsh alone
+155                 Algerian alone
+156                 Arab alone
+157                 Assyrian alone
+158                 Chaldean alone
+159                 Egyptian alone
+160                 Iranian alone
+161                 Iraqi alone
+162                 Israeli alone
+163                 Jordanian alone
+164                 Kurdish alone
+165                 Lebanese alone
+166                 Moroccan alone
+167                 Palestinian alone
+168                 Saudi alone
+169                 Syrian alone
+170                 Tunisian alone
+171                 Yemeni alone
+172                 Australian alone
+173                 Cajun alone
+174                 Canadian alone
+175                 French Canadian alone
+176                 Pennsylvania German alone
+177                 Other White alone
+200                 Black/African American
+201                 African American alone
+202                 Burundian alone
+203                 Cameroonian alone
+204                 Congolese alone
+205                 Eritrean alone
+206                 Ethiopian alone
+207                 Gambian alone
+208                 Ghanaian alone
+209                 Guinean alone
+210                 Mulatto
+211                 Ivoirian alone
+212                 Kenyan alone
+213                 Liberian alone
+214                 Nigerian (Nigeria) alone
+215                 Rwandan alone
+216                 Senegalese alone
+217                 Sierra Leonean alone
+218                 Somali alone
+219                 South African alone
+220                 South Sudanese alone
+221                 Sudanese alone
+222                 Tanzanian alone
+223                 Togolese alone
+224                 Ugandan alone
+225                 Zimbabwean alone
+226                 Bahamian alone
+227                 Barbadian alone
+228                 Grenadian alone
+229                 Haitian alone
+230                 Jamaican alone
+231                 St. Lucian alone
+232                 Trinidadian and Tobagonian alone
+233                 West Indian alone
+234                 Other Black or African American alone
+300                 American Indian/Alaska Native
+                    American Indian:
+302                 Apache
+303                 Blackfoot
+304                 Cherokee
+305                 Cheyenne
+306                 Chickasaw
+307                 Chippewa
+308                 Choctaw
+309                 Comanche
+310                 Creek
+311                 Crow
+312                 Iroquois
+313                 Kiowa
+314                 Lumbee
+315                 Navajo
+316                 Osage
+317                 Paiute
+318                 Pima
+319                 Potawatomi
+320                 Pueblo
+321                 Seminole
+322                 Shoshone
+323                 Sioux
+324                 Tlingit (Tlingit_Haida, 2000/ACS)
+325                 Tohono O Odham
+326                 All other tribes (1990)
+328                 Hopi
+329                 Central American Indian
+330                 Spanish American Indian
+340                 Aztec
+341                 Inca
+342                 Maya
+343                 Mixtec
+344                 Taino
+345                 Tarasco (Purepecha)
+350                 Delaware
+351                 Latin American Indian
+352                 Puget Sound Salish
+353                 Yakama
+354                 Yaqui
+355                 Colville
+356                 Houma
+357                 Menominee
+358                 Yuman
+359                 South American Indian
+360                 Mexican American Indian
+361                 Other Amer. Indian tribe (2000,ACS)
+362                 2+ Amer. Indian tribes (2000,ACS)
+363                 American Indian alone, not specified
+364                 All other Latin American Indian alone
+                    Alaskan Native:
+370                 Alaskan Athabaskan
+371                 Aleut
+372                 Eskimo
+373                 Alaskan mixed
+374                 Inupiat
+375                 Yup'ik
+379                 Other Alaska Native tribe(s) (2000,ACS)
+380                 Alaska Native alone, not specified
+381                 Alaska Native tribes and villages alone
+398                 Both Am. Ind. and Alaska Native (2000,ACS)
+399                 Tribe not specified
+                    Asian or Pacific Islander:
+400                 Chinese
+410                 Taiwanese
+420                 Chinese and Taiwanese
+500                 Japanese
+600                 Filipino
+610                 Asian Indian (Hindu 1920_1940)
+620                 Korean
+630                 Hawaiian
+631                 Hawaiian and Asian (1900,1920)
+632                 Hawaiian and European (1900,1920)
+634                 Hawaiian mixed
+640                 Vietnamese
+641                 Bhutanese
+642                 Mongolian
+643                 Nepalese
+650                 Other Asian or Pacific Islander (1920,1980)
+651                 Asian only (CPS)
+652                 Pacific Islander only (CPS)
+653                 Asian or Pacific Islander, n.s. (1990 Internal Census files)
+655                 Afghan
+656                 Mien
+657                 Sikh
+658                 Kazakh
+659                 Uzbek
+660                 Cambodian
+661                 Hmong
+662                 Laotian
+663                 Thai
+664                 Bangladeshi
+665                 Burmese
+666                 Indonesian
+667                 Malaysian
+668                 Okinawan
+669                 Pakistani
+670                 Sri Lankan
+671                 Other Asian, n.e.c.
+672                 Asian, not specified
+                    Two or more Asian races
+673                 Chinese and Japanese
+674                 Chinese and Filipino
+675                 Chinese and Vietnamese
+676                 Chinese and Asian write_in
+677                 Japanese and Filipino
+678                 Asian Indian and Asian write_in
+679                 Other Asian race combinations
+                    Polynesian region (also includes Hawaii):
+680                 Samoan
+681                 Tahitian
+682                 Tongan
+683                 Other Polynesian (1990)
+684                 1+ other Polynesian races (2000,ACS)
+                    Micronesian region:
+685                 Chamorro
+686                 Northern Mariana Islander
+687                 Palauan
+688                 Other Micronesian (1990)
+689                 1+ other Micronesian races (2000,ACS)
+690                 Chuukese
+691                 Guamanian
+692                 Marshallese
+                    Melanesian region:
+695                 Fijian
+696                 Other Melanesian (1990)
+697                 1+ other Melanesian races (2000,ACS)
+                    Pacific Islanders from two or more PI regions:
+698                 2+ PI races from 2+ PI regions
+699                 Pacific Islander, n.s.
+                    Some other race
+700                 Other race, n.e.c.
+710                 Brazilian
+720                 Cabo Verdean
+730                 Guyanese
+                    Two major race groups:
+801                 White and Black
+802                 White and AIAN
+810                 White and Asian
+811                 White and Chinese
+812                 White and Japanese
+813                 White and Filipino
+814                 White and Asian Indian
+815                 White and Korean
+816                 White and Vietnamese
+817                 White and Asian write_in
+818                 White and other Asian race(s)
+819                 White and two or more Asian groups
+820                 White and PI
+821                 White and Native Hawaiian
+822                 White and Samoan
+823                 White and Chamorro
+824                 White and PI write_in
+825                 White and other PI race(s)
+826                 White and other race write_in
+827                 White and other race, n.e.c.
+830                 Black and AIAN
+831                 Black and Asian
+832                 Black and Chinese
+833                 Black and Japanese
+834                 Black and Filipino
+835                 Black and Asian Indian
+836                 Black and Korean
+837                 Black and Asian write_in
+838                 Black and other Asian race(s)
+840                 Black and PI
+841                 Black and PI write_in
+842                 Black and other PI race(s)
+845                 Black and other race write_in
+850                 AIAN and Asian
+851                 AIAN and Filipino (2000 1%)
+852                 AIAN and Asian Indian
+853                 AIAN and Asian write_in (2000 1%)
+854                 AIAN and other Asian race(s)
+855                 AIAN and PI
+856                 AIAN and other race write_in
+860                 Asian and PI
+861                 Chinese and Hawaiian
+862                 Chinese, Filipino, Hawaiian (2000 1%)
+863                 Japanese and Hawaiian (2000 1%)
+864                 Filipino and Hawaiian
+865                 Filipino and PI write_in
+866                 Asian Indian and PI write_in (2000 1%)
+867                 Asian write_in and PI write_in
+868                 Other Asian race(s) and PI race(s)
+869                 Japanese and Korean (ACS)
+880                 Asian and other race write_in
+881                 Chinese and other race write_in
+882                 Japanese and other race write_in
+883                 Filipino and other race write_in
+884                 Asian Indian and other race write_in
+885                 Asian write_in and other race write_in
+886                 Other Asian race(s) and other race write_in
+887                 Chinese and Korean
+890                 PI and other race write_in:
+891                 PI write_in and other race write_in
+892                 Other PI race(s) and other race write_in
+893                 Native Hawaiian or PI other race(s)
+899                 API and other race write_in
+                    Three major race groups:
+901                 White, Black, AIAN
+902                 White, Black, Asian
+903                 White, Black, PI
+904                 White, Black, other race write_in
+905                 White, AIAN, Asian
+906                 White, AIAN, PI
+907                 White, AIAN, other race write_in
+910                 White, Asian, PI
+911                 White, Chinese, Hawaiian
+912                 White, Chinese, Filipino, Hawaiian (2000 1%)
+913                 White, Japanese, Hawaiian (2000 1%)
+914                 White, Filipino, Hawaiian
+915                 Other White, Asian race(s), PI race(s)
+916                 White, AIAN and Filipino
+917                 White, Black, and Filipino
+920                 White, Asian, other race write_in
+921                 White, Filipino, other race write_in (2000 1%)
+922                 White, Asian write_in, other race write_in (2000 1%)
+923                 Other White, Asian race(s), other race write_in (2000 1%)
+925                 White, PI, other race write_in
+926                 White and Japanese and Native Hawaiian and Pacific Islander
+927                 White and Asian and Native Hawaiian and Pacific Islander
+930                 Black, AIAN, Asian
+931                 Black, AIAN, PI
+932                 Black, AIAN, other race write_in
+933                 Black, Asian, PI
+934                 Black, Asian, other race write_in
+935                 Black, PI, other race write_in
+936                 Black and Native Hawaiian and Other Pacific Islander
+940                 AIAN, Asian, PI
+941                 AIAN, Asian, other race write_in
+942                 AIAN, PI, other race write_in
+943                 Asian, PI, other race write_in
+944                 Asian (Chinese, Japanese, Korean, Vietnamese); and Native Hawaiian or PI; and Other
+949                 2 or 3 races (CPS)
+                    Four major race groups:
+950                 White, Black, AIAN, Asian
+951                 White, Black, AIAN, PI
+952                 White, Black, AIAN, other race write_in
+953                 White, Black, Asian, PI
+954                 White, Black, Asian, other race write_in
+955                 White, Black, PI, other race write_in
+960                 White, AIAN, Asian, PI
+961                 White, AIAN, Asian, other race write_in
+962                 White, AIAN, PI, other race write_in
+963                 White, Asian, PI, other race write_in
+964                 White, Chinese, Japanese, Native Hawaiian
+970                 Black, AIAN, Asian, PI
+971                 Black, AIAN, Asian, other race write_in
+972                 Black, AIAN, PI, other race write_in
+973                 Black, Asian, PI, other race write_in
+974                 AIAN, Asian, PI, other race write_in
+975                 AIAN, Asian, PI, Hawaiian other race write_in
+976                 Two specified Asian  (Chinese and other Asian, Chinese and Japanese, Japanese and other Asian, Korean and other Asian); Native Hawaiian/PI; and Other Race
+                    Five major race groups:
+980                 White, Black, AIAN, Asian, PI
+981                 White, Black, AIAN, Asian, other race write_in
+982                 White, Black, AIAN, PI, other race write_in
+983                 White, Black, Asian, PI, other race write_in
+984                 White, AIAN, Asian, PI, other race write_in
+985                 Black, AIAN, Asian, PI, other race write_in
+986                 Black, AIAN, Asian, PI, Hawaiian, other race write_in
+989                 4 or 5 races (CPS)
+                    Six major race groups:
+990                 White, Black, AIAN, Asian, PI, other race write_in
+991                 White race; Some other race; Black or African American race and/or American Indian and Alaska Native race and/or Asian groups and/or Native Hawaiian and Other Pacific Islander groups
+996                 2+ races, n.e.c. (CPS)
+997                 Unknown
+
+HISPAN              Hispanic origin [general version]
+0                   Not Hispanic
+1                   Mexican
+2                   Puerto Rican
+3                   Cuban
+4                   Other
+9                   Not Reported
+
+HISPAND             Hispanic origin [detailed version]
+000                 Not Hispanic
+100                 Mexican
+102                 Mexican American
+103                 Mexicano/Mexicana
+104                 Chicano/Chicana
+105                 La Raza
+106                 Mexican American Indian
+107                 Mexico
+200                 Puerto Rican
+300                 Cuban
+                    Other:
+                    Central American
+401                 Central American Indian
+402                 Canal Zone
+411                 Costa Rican
+412                 Guatemalan
+413                 Honduran
+414                 Nicaraguan
+415                 Panamanian
+416                 Salvadoran
+417                 Central American, n.e.c.
+                    South American
+420                 Argentinean
+421                 Bolivian
+422                 Chilean
+423                 Colombian
+424                 Ecuadorian
+425                 Paraguayan
+426                 Peruvian
+427                 Uruguayan
+428                 Venezuelan
+429                 South American Indian
+430                 Criollo
+431                 South American, n.e.c.
+                    Spaniard
+450                 Spaniard
+451                 Andalusian
+452                 Asturian
+453                 Castillian
+454                 Catalonian
+455                 Balearic Islander
+456                 Gallego
+457                 Valencian
+458                 Canarian
+459                 Spanish Basque
+460                 Dominican
+465                 Latin American
+470                 Hispanic
+480                 Spanish
+490                 Californio
+491                 Tejano
+492                 Nuevo Mexicano
+493                 Spanish American
+494                 Spanish American Indian
+495                 Meso American Indian
+496                 Mestizo
+498                 Other, n.s.
+499                 Other, n.e.c.
+900                 Not Reported
+
+HCOVANY             Any health insurance coverage
+1                   No health insurance coverage
+2                   With health insurance coverage
+
+EDUC                Educational attainment [general version]
+00                  N/A or no schooling
+01                  Nursery school to grade 4
+02                  Grade 5, 6, 7, or 8
+03                  Grade 9
+04                  Grade 10
+05                  Grade 11
+06                  Grade 12
+07                  1 year of college
+08                  2 years of college
+09                  3 years of college
+10                  4 years of college
+11                  5+ years of college
+99                  Missing
+
+EDUCD               Educational attainment [detailed version]
+000                 N/A or no schooling
+001                 N/A
+002                 No schooling completed
+010                 Nursery school to grade 4
+011                 Nursery school, preschool
+012                 Kindergarten
+013                 Grade 1, 2, 3, or 4
+014                 Grade 1
+015                 Grade 2
+016                 Grade 3
+017                 Grade 4
+020                 Grade 5, 6, 7, or 8
+021                 Grade 5 or 6
+022                 Grade 5
+023                 Grade 6
+024                 Grade 7 or 8
+025                 Grade 7
+026                 Grade 8
+030                 Grade 9
+040                 Grade 10
+050                 Grade 11
+060                 Grade 12
+061                 12th grade, no diploma
+062                 High school graduate or GED
+063                 Regular high school diploma
+064                 GED or alternative credential
+065                 Some college, but less than 1 year
+070                 1 year of college
+071                 1 or more years of college credit, no degree
+080                 2 years of college
+081                 Associate's degree, type not specified
+082                 Associate's degree, occupational program
+083                 Associate's degree, academic program
+090                 3 years of college
+100                 4 years of college
+101                 Bachelor's degree
+110                 5+ years of college
+111                 6 years of college (6+ in 1960-1970)
+112                 7 years of college
+113                 8+ years of college
+114                 Master's degree
+115                 Professional degree beyond a bachelor's degree
+116                 Doctoral degree
+999                 Missing
+
