@@ -10,7 +10,9 @@ packages = c(
   "knitr", # for processing quarto
   "readr","haven", "fs", "yaml", # I/O
   "tidyverse", "broom", #tidyverse and friends
-  "modelsummary","gt" # for table output
+  "modelsummary","gt", # for table output
+  # Additional project packages #
+  "googledrive"
 )
 
 package.check <- lapply(packages, FUN = function(x) {

@@ -12,5 +12,5 @@
 ##############################################
 
 # any consistent string will work for version (e.g. date, v1, v2, uuid)
-version: 'v1'
-description: 'Some description of latest data'
+version: '2026-02-07'
+description: 'American Community Survey data, 2015-2019, from IPUMS'

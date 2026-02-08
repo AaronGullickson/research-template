@@ -23,11 +23,8 @@ This quarto doc is used to organize the data.
 ```{r}
 #| label: download-data
 
-# This script is for use when the data will be downloaded from an external
-# source like Google Drive to each collaborator's local machine. This script
-# checks if the data version on the remote repo matches the local and if not
-# it downloads the required data and then updates the local version. If you are 
-# not using external data, then this code chunk can be removed.
+# This script checks if the data version on the remote repo matches the local
+# and if not it downloads the required data and then updates the local version.
 
 # get latest data version from repo
 repo_version <- read_yaml(here("data", "data_raw", "data_version.yml"))$version
@@ -42,8 +39,12 @@ if (file_exists(local_version_path)) {
 
 if(local_version != repo_version) {
   
-  # TODO: add code here to download the data locally, e.g. from Google Drive
-  # with the googledrive R package.
+  # deauthorize google drive to avoid interactive prompts
+  drive_deauth()
+
+  # download data locally
+  drive_download(as_id("1pCoTrcy87-R4ISZl1qhBczNRUsWZxY6R"), 
+                 path = here("data", "data_raw", "acs.dat.gz"))
   
   # update local to repo version
   write_yaml(list(version = repo_version), 
