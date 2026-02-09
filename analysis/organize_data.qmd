@@ -16,9 +16,11 @@ source(here("utils","check_packages.R"))
 source(here("utils","functions.R"))
 ```
 
-This quarto doc is used to organize the data.
+The data used for this analysis are extracts of the American Community Survey samples from 2015-2019. The extracts were created from [IPUMS USA](https://usa.ipums.org/usa/) <!-- TODO: citation -->. These extracts are provided here with permission of IPUMS, should only be used with this demo project, and may not be redistributed. For all other uses of IPUMS data, please access data directly at [IPUMS USA](https://usa.ipums.org/usa/).
 
 # Download Data
+
+Because these data are larger than a 100 MB, they cannot be placed within the GitHub repository. The data are instead hosted on Google Drive. The code below will download the data locally for the user and set up a local version tracking file (`data/data_raw/data_version_local.yml`) such that the data will only be re-downloaded when the GitHub repository version (tracked in `data/data_raw/data_version.yml`) changes.
 
 ```{r}
 #| label: download-data
@@ -52,6 +54,272 @@ if(local_version != repo_version) {
 }
 ```
 
+# Load the raw data
+
+The data are in a fixed-width format. The latest codebook provides the column positions for all variables. I use all-caps for variable names that are taken from the data and switch to lower snake case once that variable has been properly cleaned and encoded.
+
+```
+  Variable                         Columns        Len   2015    2016    2017    2018    2019    
+  YEAR                         H   1-4            4     X       X       X       X       X       
+  SAMPLE                       H   5-10           6     X       X       X       X       X       
+  SERIAL                       H  11-18           8     X       X       X       X       X       
+  CBSERIAL                     H  19-31          13     X       X       X       X       X       
+  HHWT                         H  32-41          10     X       X       X       X       X       
+  CLUSTER                      H  42-54          13     X       X       X       X       X       
+  STRATA                       H  55-66          12     X       X       X       X       X       
+  GQ                           H  67              1     X       X       X       X       X       
+  PERNUM                       P  68-71           4     X       X       X       X       X       
+  PERWT                        P  72-81          10     X       X       X       X       X       
+  SEX                          P  82              1     X       X       X       X       X       
+  AGE                          P  83-85           3     X       X       X       X       X       
+  MARST                        P  86              1     X       X       X       X       X       
+  RACE                         P  87              1     X       X       X       X       X       
+  RACED                        P  88-90           3     X       X       X       X       X       
+  HISPAN                       P  91              1     X       X       X       X       X       
+  HISPAND                      P  92-94           3     X       X       X       X       X       
+  HCOVANY                      P  95              1     X       X       X       X       X       
+  EDUC                         P  96-97           2     X       X       X       X       X       
+  EDUCD                        P  98-100          3     X       X       X       X       X       
+```
+
+```{r}
+#| label: load-data
+
+acs <- read_fwf(here("data", "data_raw", "acs.dat.gz"), 
+                # fwf_cols provides the easiest way to record starting and 
+                # ending positions
+                col_positions = fwf_cols(YEAR = c(1, 4),
+                                         PERWT = c(72, 81),
+                                         SEX = 82,
+                                         AGE = c(83, 85),
+                                         MARST = 86,
+                                         RACE = 87,
+                                         HISPAN = 91,
+                                         HCOVANY = 95,
+                                         EDUCD = c(98, 100)),
+                # force all to integers to deal with leading zero issue
+                col_types = cols(.default = "i"))
+```
+
+Lets just do a basic summary to make sure everything looks about right in terms of values.
+
+```{r}
+#| label: post-load-summary
+
+summary(acs)
+```
+
+# Recode variables
+
+When variables are recoded, the new variable will use lower snake case, so that I can compare between the original and recoded variable. Ultimately, only the recoded variables will be saved to the analytical data.
+
+```{r}
+#| label: recode-vars
+
+acs <- acs |>
+  # we can take year as is
+  rename(year = YEAR) |>
+  # the rest need to be encoded
+  mutate(
+    age = if_else(AGE == 999, NA, AGE),
+    sex = case_when(SEX == 1 ~ "Male", SEX == 2 ~ "Female"),
+    sex = factor(sex),
+    mar_stat = case_when(MARST == 1 | MARST == 2 ~ "Married",
+                         MARST == 3 | MARST == 4 ~ "Divorced/Separated",
+                         MARST == 5 ~ "Widowed",
+                         MARST == 6 ~ "Never Married"),
+    mar_stat = factor(mar_stat, 
+                      levels = c("Never Married", "Married", 
+                                 "Divorced/Separated", "Widowed")),
+    race = case_when(HISPAN != 0 ~ "Latino",
+                     RACE == 1 ~ "White",
+                     RACE == 2 ~ "Black",
+                     RACE == 3 ~ "AIAN",
+                     RACE >=4 & RACE <= 6 ~ "API",
+                     RACE == 7 ~ "Other",
+                     RACE == 8 | RACE == 9 ~ "Multiracial"),
+    race = factor(race,
+                  levels = c("White", "Black", "AIAN", "Latino", "API",
+                             "Multiracial", "Other")),
+    health_insurance = case_when(HCOVANY == 2 ~ "Covered", 
+                                 HCOVANY == 1 ~ "Uncovered"),
+    health_insurance = factor(health_insurance, 
+                              levels = c("Uncovered", "Covered")),
+    degree = case_when(EDUCD <= 1 | EDUCD == 999 ~ NA_character_,
+                       EDUCD <= 61 ~ "No Degree",
+                       EDUCD <= 80 ~ "HS Diploma",
+                       EDUCD <= 100 ~ "AA Degree",
+                       EDUCD <= 113 ~ "Bachelors Degree",
+                       TRUE ~ "Graduate Degree"),
+    degree = factor(degree,
+                    levels = c("No Degree", "HS Diploma", "AA Degree",
+                               "Bachelors Degree", "Graduate Degree"))
+    )
+```
+
+## Check Yourself Before You Wreck Yourself
+
+
+![Data Science Legend Ice Cube Speaks the Truth](https://media1.tenor.com/m/cpY5a5qycdMAAAAd/wreck-check-yourself.gif)
+
+Always check your coding to make sure you did what you think you did! When recoding categorical variables, we can use a simple cross-tabulation to ensure that all of the original values went to the correct categories. Below, I paste in the values from the IPUMS codebook for direct comparison.
+
+### Sex
+
+```
+SEX                 Sex
+1                   Male
+2                   Female
+9                   Missing/blank
+```
+
+```{r}
+#| label: check-sex-coding
+
+table(acs$SEX, acs$sex, exclude = NULL)
+```
+
+### Marital Status
+
+```
+MARST               Marital status
+1                   Married, spouse present
+2                   Married, spouse absent
+3                   Separated
+4                   Divorced
+5                   Widowed
+6                   Never married/single
+9                   Blank, missing
+```
+
+```{r}
+#| label: check-mar-stat-coding
+
+table(acs$MARST, acs$mar_stat, exclude = NULL)
+```
+
+### Race
+
+This is combined across two categories (RACE and HISPAN), so its a bit more complicated.
+
+```
+RACE                Race [general version]
+1                   White
+2                   Black/African American
+3                   American Indian or Alaska Native
+4                   Chinese
+5                   Japanese
+6                   Other Asian or Pacific Islander
+7                   Other race, nec
+8                   Two major races
+9                   Three or more major races
+
+HISPAN              Hispanic origin [general version]
+0                   Not Hispanic
+1                   Mexican
+2                   Puerto Rican
+3                   Cuban
+4                   Other
+9                   Not Reported
+```
+
+```{r}
+#| label: check-race-coding
+
+table(acs$RACE, acs$HISPAN, acs$race, exclude = NULL)
+```
+
+### Highest Degree
+
+```
+EDUCD               Educational attainment [detailed version]
+000                 N/A or no schooling
+001                 N/A
+002                 No schooling completed
+010                 Nursery school to grade 4
+011                 Nursery school, preschool
+012                 Kindergarten
+013                 Grade 1, 2, 3, or 4
+014                 Grade 1
+015                 Grade 2
+016                 Grade 3
+017                 Grade 4
+020                 Grade 5, 6, 7, or 8
+021                 Grade 5 or 6
+022                 Grade 5
+023                 Grade 6
+024                 Grade 7 or 8
+025                 Grade 7
+026                 Grade 8
+030                 Grade 9
+040                 Grade 10
+050                 Grade 11
+060                 Grade 12
+061                 12th grade, no diploma
+062                 High school graduate or GED
+063                 Regular high school diploma
+064                 GED or alternative credential
+065                 Some college, but less than 1 year
+070                 1 year of college
+071                 1 or more years of college credit, no degree
+080                 2 years of college
+081                 Associate's degree, type not specified
+082                 Associate's degree, occupational program
+083                 Associate's degree, academic program
+090                 3 years of college
+100                 4 years of college
+101                 Bachelor's degree
+110                 5+ years of college
+111                 6 years of college (6+ in 1960-1970)
+112                 7 years of college
+113                 8+ years of college
+114                 Master's degree
+115                 Professional degree beyond a bachelor's degree
+116                 Doctoral degree
+999                 Missing
+```
+
+```{r}
+#| label: check-ed-coding
+
+table(acs$EDUCD, acs$degree, exclude = NULL)
+```
+
+### Insurance Coverage
+
+```
+HCOVANY             Any health insurance coverage
+1                   No health insurance coverage
+2                   With health insurance coverage
+```
+
+```{r}
+#| label: check-insurance-coding
+
+table(acs$HCOVANY, acs$health_insurance, exclude = NULL)
+```
+
+### Age
+
+```{r}
+#| label: check-age-coding
+
+summary(acs$age)
+```
+
+# Save to file
+
+Now we are ready to save the analytical data. I use this opportunity to restrict to just the constructed variables we need for the analysis. Constructed data like this should always go in the `data/data_constructed/` directory.
+
+
+```{r}
+#| label: save-analytical-data
+
+acs <- acs |>
+  select(year, age, sex, race, degree, health_insurance)
+
+save(acs, file = here("data", "data_constructed", "acs.RData"))
+```
 
 ```{r}
 #label: timestamp-end
