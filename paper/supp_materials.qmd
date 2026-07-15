@@ -2,7 +2,7 @@
 title: "Supplementary Materials"
 
 # for blind submission, uncomment out this to remove author information
-#author: []
+#author: ""
 
 # use aog-article-pdf for format
 format:
@@ -16,7 +16,7 @@ format:
 header-includes:
   - \renewcommand{\thetable}{S\arabic{table}}
   - \renewcommand{\thefigure}{S\arabic{figure}}
-   - \renewcommand{\thesection}{S\arabic{section}}
+  - \renewcommand{\thesection}{S\arabic{section}}
 ---
 
 ```{r}
