@@ -1,15 +1,19 @@
 ---
 title: "Supplementary Materials"
 
-# just aog-article-pdf for format
+# use aog-article-pdf for format
 format:
   aog-article-pdf:
     keep-tex: false
+    # by default produce table of contents and numbered sections
+    toc: true
+    number-sections: true
 
-# this command adds an "S" prefix to all table and figure numbering
+# this command adds an "S" prefix to all section, table, figure numbering
 header-includes:
   - \renewcommand{\thetable}{S\arabic{table}}
   - \renewcommand{\thefigure}{S\arabic{figure}}
+   - \renewcommand{\thesection}{S\arabic{section}}
 ---
 
 ```{r}
