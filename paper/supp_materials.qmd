@@ -1,6 +1,9 @@
 ---
 title: "Supplementary Materials"
 
+# for blind submission, uncomment out this to remove author information
+#author: []
+
 # use aog-article-pdf for format
 format:
   aog-article-pdf:
