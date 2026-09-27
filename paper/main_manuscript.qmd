@@ -38,8 +38,11 @@ format:
 ```{r}
 #| label: setup
 #| include: false
+
+# load packages
 library(here)
-source(here("utils","check_packages.R"))
+
+# load functions
 source(here("utils","functions.R"))
 ```
 

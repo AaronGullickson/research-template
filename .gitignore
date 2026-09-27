@@ -6,6 +6,7 @@
 .Rhistory
 .Rdata
 .DS_Store
+.positai
 
 # MS Office temp files
 **/~$*.doc*
@@ -22,6 +23,7 @@ desktop.ini
 *.bbl
 *.ent
 *.log
+*.tex
 
 # Ignore quarto stuff
 /.quarto/
@@ -63,3 +65,4 @@ data/data_raw/**
 !data/data_raw/**/
 !data/data_raw/**/*.txt
 !data/data_raw/**/*.pdf
+

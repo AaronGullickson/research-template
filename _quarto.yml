@@ -9,8 +9,9 @@ project:
   
   # determine which files to run when project is built and their order
   pre-render: 
-    - utils/check_packages.R      # install required packages
-    - utils/remove_artifacts.R    # remove previously constructed files
+    # initialize project by checking package dependencies and removing 
+    # artifacts on a full project run
+    - utils/initialize_project.R
   render:
     - index.qmd
     # if analysis is split into multiple docs, add them here, specifying 
