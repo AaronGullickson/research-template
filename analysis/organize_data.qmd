@@ -16,6 +16,9 @@ timestamp()
 library(here)
 library(yaml)
 library(fs)
+library(dplyr)
+library(readr)
+library(googledrive)
 
 # load functions
 source(here("utils","functions.R"))
@@ -95,12 +98,12 @@ acs <- read_fwf(here("data", "data_raw", "acs.dat.gz"),
                 # ending positions
                 col_positions = fwf_cols(YEAR = c(1, 4),
                                          PERWT = c(72, 81),
-                                         SEX = 82,
+                                         SEX = c(82, 82),
                                          AGE = c(83, 85),
-                                         MARST = 86,
-                                         RACE = 87,
-                                         HISPAN = 91,
-                                         HCOVANY = 95,
+                                         MARST = c(86, 86),
+                                         RACE = c(87, 87),
+                                         HISPAN = c(91, 91),
+                                         HCOVANY = c(95, 95),
                                          EDUCD = c(98, 100)),
                 # force all to integers to deal with leading zero issue
                 col_types = cols(.default = "i"))
