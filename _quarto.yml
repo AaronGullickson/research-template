@@ -7,21 +7,20 @@ project:
   output-dir: _docs
   execute-dir: project
   
-  # determine which files to run when project is built and their order
   pre-render: 
     # initialize project by checking package dependencies and removing 
     # artifacts on a full project run
     - utils/initialize_project.R
   render:
-    - index.qmd
+    # determine which files to run when project is built and their order
     # if analysis is split into multiple docs, add them here, specifying 
     # individual qmd files also allows us to ensure proper ordering of 
     # when they run (e.g. organize_data before analysis)
+    - index.qmd
     - analysis/organize_data.qmd
     - analysis/analysis.qmd
     - paper/
     - presentation/
-    # uncomment out next line to get a site index for your project
     - "!bibliography/"
     
 # bibliography information. You can add additional CSL styles to the 

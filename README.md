@@ -121,11 +121,20 @@ If you want to publish these research logs, I suggest one of two approaches:
 For either approach, follow these steps to publish your research logs:
 
 1.  In the `.gitignore` file, review the section entitled "Handling quarto output" and decide if you want to only include html files or all files in `_docs` under version control and make the appropriate changes.
-2.  Uncomment out the line in the `_quarto.yml` render section for `index.qmd`. You can modify `index.qmd`, which will serve as the home page, to your tastes.
-3.  Re-render the whole project and then commit and push the files from the `_docs` directory.
-4.  Follow the instructions below depending on where you want to serve up the research logs.
-    1.  **GitHub Pages**: Uncomment out the two push lines at the top of `.github/workflows/publish-docs.yml`. On the GitHub repository page, go to `Settings > Pages` and set the Source as GitHub Actions. Then Go to the `Actions` tab on the GitHub repository, and choose the "Publish Docs to GitHub Pages" action and manually set it to run. Once it is complete, the website will be served at https://USERNAME.github.io/REPONAME/ where USERNAME is the user name where the repository lives and REPONAME is the name of the repository. Any future pushes to the repository will re-run this GitHub action and update the docs.
-    2.  **Netlify**: Log into [netlify](https://netlify.com) with your GitHub account. From the dashboard choose `Add a New Project > Import and Existing Project`. Select GitHub and, after authenticating, choose the project repository. Set the base directory as `_docs` and, optionally assign a website name (or get a random one). Deploy and it will serve those documents up on your brand new website. Any time you commit and push changes to the files in `_docs`, the website will automatically update.
+2.  Commit and push the files from the `_docs` directory.
+3.  Follow the instructions below depending on where you want to serve up the research logs.
+    1.  GitHub Pages
+        1.  Uncomment out the two push lines at the top of `.github/workflows/publish-docs.yml`.
+        2.  On the GitHub repository page, go to `Settings > Pages` and set the Source as GitHub Actions.
+        3.  Go to the `Actions` tab on the GitHub repository, and choose the "Publish Docs to GitHub Pages" action and manually set it to run. Once it is complete, the website will be served at https://USERNAME.github.io/REPONAME/ where USERNAME is the user name where the repository lives and REPONAME is the name of the repository.
+        4.  Any future pushes to the repository will re-run this GitHub action and update the docs.
+    2.  Netlify
+        1.  Log into [netlify](https://netlify.com) with your GitHub account.
+        2.  From the dashboard choose `Add a New Project > Import and Existing Project`. Select GitHub and authenticate. Choose the project repository.
+        3.  Set the base directory as `_docs` and optionally assign a website name (or get a random one). Deploy and it will serve those documents up on your brand new website.
+        4.  Any time you commit and push changes to the files in `_docs`, the website will automatically update.
+
+You can modify `index.qmd`, which will serve as the home page, to your tastes.
 
 ### Dealing with Raw Data
 
