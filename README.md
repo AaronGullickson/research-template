@@ -70,11 +70,10 @@ For big projects a single `organize_data.qmd` and `analysis.qmd` file may not be
     - "!bibliography/"
 ```
 
-To ensure package dependencies are properly specified and that global functions are loaded, any new R scripts or Quarto document created should always start with:
+To ensure packagethat global functions are loaded, any new R scripts or Quarto document created should always start with:
 
 ``` r
 library(here)
-source(here("utils","check_packages.R"))
 source(here("utils","functions.R"))
 ```
 
