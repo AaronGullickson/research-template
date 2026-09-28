@@ -16,7 +16,6 @@
 # IMPORTANT NOTE: On the free GitHub plan, the repository must be public to 
 # use GitHub Pages. An alternative for private repositories is to use Netlify
 # as described in the README.
-
 name: Publish Docs to GitHub Pages
 
 on:
