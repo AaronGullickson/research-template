@@ -8,14 +8,20 @@ To see an example of this template in action, go [here](https://github.com/Aaron
 
 ## Quickstart
 
-To start an actual research project with this template:
+To start an actual research project with this template, you will first want to have the following installed:
+
+1.  A recent version of [R](https://www.r-project.org/).
+2.  A recent version of [Quarto](https://quarto.org/docs/get-started/). To render a full article in pdf format, you will also want to install tinytex from a Terminal with the command `quarto install tinytex`.
+3.  (Optional) A recent version of [RStudio](https://posit.co/products/open-source/rstudio). You can use a different IDE if you prefer, but RStudio is very convenient and the instructions below will assume it.
+
+Once you have ensured those installations, then follow these instructions to get up and running:
 
 1.  Click the green "Use this template" button above to create a new GitHub repository based on this template.
 2.  Clone the generated repository to your own local machine. I usually do this via RStudio from File \> New Project (or the Gelatinous Cube button), and then choose "From Version Control."
 3.  Change the name of the `research-template.Rproj` file in the local repository to the name of your project.
 4.  Open the project in RStudio. I usually do this by double-clicking the Rproj file.
 5.  From RStudio, open the `_quarto.yml` file and change the project title and author information. You can add multiple authors here if you like.
-6.  Go to `utils/check_packages.R` and add any packages based on what your project requires. Source this file in to make sure you have all the dependencies installed.
+6.  Opening RStudio, should have triggered `renv` activation and you can now type `renv::restore()` into the console to install all package dependencies that the project starts with. If, for some reason, the `renv` package is not available, first run `source("renv/activation.R")` to activate the project and install `renv` and then you can use `renv::restore()` to install package dependencies.
 7.  In the upper right panel of RStudio, go to the Build tab and click "Render project." You will see how quarto runs through the entire project, script by script. Look at the `_docs` directory for the output.
 8.  Change the README file contents to describe your project.
 9.  Dump some raw data into `data/data_raw` and start coding! You can also learn more about how to use this workflow below.
@@ -64,17 +70,40 @@ For big projects a single `organize_data.qmd` and `analysis.qmd` file may not be
     - "!bibliography/"
 ```
 
-To ensure package dependencies are properly specified and that global functions are loaded, any new R scripts or Quarto document created should always start with:
+To ensure packagethat global functions are loaded, any new R scripts or Quarto document created should always start with:
 
 ``` r
 library(here)
-source(here("utils","check_packages.R"))
 source(here("utils","functions.R"))
 ```
 
 ### Handling Package Dependencies
 
-Aside from the `here` library, no direct library commands should be written into R scripts or quarto documents. Instead, all of these scripts should source in the `utils/check_packages.R` script which will check for package dependencies and install needed packages. Users can add or remove packages from the list specified in that file. Anyone using the project can source this file to both load the dependencies and ensure they are up-to-date.
+This project uses the [renv](https://rstudio.github.io/renv/index.html) package to handle package dependencies. The `renv` package keeps a separate set of packages for each project and tracks what package dependencies exist in the project and which version of packages are being used by the project. This approach improves reproducibility by ensuring that all required packages are present and that future changes to packages don't create breaking problems for the existing project.
+
+The `renv.lock` file and `renv` directory contain all of the information about package dependencies. When you start the project, it will "activate" renv by sourcing `renv/activation.R`, but you can also source this script manually if activation fails to happen for any reason. This will install the `renv` package. To install all current package dependencies in the project, you can then run:
+
+``` r
+renv::restore()
+```
+
+As you work on the project, you will likely use additional packages. Install these packages the way you normally would (e.g. `install.packages` or `pak`) and load them with a `library` call or by a namespace-qualified call (e.g. `dplyr::select(...)`). To add these new packages to your `renv`, just run:
+
+``` r
+renv::snapshot()
+```
+
+The `renv` package will scan all scripts and quarto files to find any new package dependencies and will then update `renv.lock` with the new packages and their dependencies. These changes should be committed and pushed. After pulling in the changes, collaborators can then update their own package dependencies with:
+
+``` r
+renv::restore()
+```
+
+You can also check dependencies by file at any time with:
+
+``` r
+renv::dependencies()
+```
 
 ### Making Global Functions
 
@@ -84,7 +113,7 @@ To create custom functions that will be accessible to all scripts in the project
 
 It is possible to publish any product in the `_docs` directory to an internet site. This can be useful to keep all research collaborators up to date on the latest changes to the project, but keep in mind that it will also be visible to anyone with the link.
 
-You can publish your products in `_docs` to GitHub pages. However, to do so, you must either used a paid plan or make your repository public. Therefore, I usually use [netlify](https://www.netlify.com/) instead. To publish your research logs, follow these steps:
+You can publish your products in `_docs` to GitHub pages. However, to do so, you must either use a paid plan or make your repository public. Therefore, I usually use [netlify](https://www.netlify.com/) instead. To publish your research logs, follow these steps:
 
 1.  In the `.gitignore` file, review the section entitled "Handling quarto output" and decide if you want to only put only html files or all files in `_docs` under version control.
 2.  Uncomment out the line in \_quarto.yml render section for `index.qmd`.
@@ -160,7 +189,7 @@ The code checks the "official" version in `data_version.yml` against a local ver
 
 If the data are updated, then replace the UUID for downloading data from Google Drive and update the `version` field in `data_version.yml`. Then commit and push those changes. Once collaborators pull in those changes, they will download the data the next time they run `organize_data.qmd`.
 
-## A Reproducible Research Workflow
+## A Reproducible Research Workflow {#a-reproducible-research-workflow}
 
 ### Three Phases
 

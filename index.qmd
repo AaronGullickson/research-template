@@ -6,6 +6,14 @@ format:
 ---
 
 ```{r}
+#| label: setup
+#| include: false
+
+library(tibble)
+library(gt)
+```
+
+```{r}
 #| label: timestamp
 
 timestamp()
@@ -17,7 +25,7 @@ timestamp()
 |----------------------------------------------------|
 | [Organizing Data](analysis/organize_data.html)     |
 | [Analysis](analysis/analysis.html)                 |
-| [Presentation](presentation/presentation.html)     |
+<!--| [Presentation](presentation/presentation.html)     |-->
 <!--| [Manuscript](paper/main_manuscript.pdf)            |-->
 <!--| [Supplementary Materials](paper/supp_materials.pdf)|-->
 
@@ -48,15 +56,41 @@ timestamp()
 # R Packages and Session Information
 
 ```{r}
-#| label: load-packages
-#| output: false
+#| label: get-lockfile-data
+#| echo: false
 
-library(here)
-source(here("utils", "check_packages.R"))
+lock <- renv::lockfile_read("renv.lock")
+```
+
+
+```{r}
+#| label: tbl-r-version
+#| tbl-cap: R Version Used
+#| echo: false
+
+tribble(
+  ~status,                 ~version,
+  "This render",           as.character(getRversion()),
+  "Recorded in renv.lock", lock$R$Version
+) |>
+  gt() |>
+  cols_label(
+    status ~ "Status",
+    version ~ "Version"
+  )
 ```
 
 ```{r}
-#| label: report-packages
+#| label: tbl-package-version
+#| tbl-cap: R package dependencies
+#| echo: false
 
-sessionInfo()
+tibble(
+  Package = names(lock$Packages),
+  Version = vapply(lock$Packages, function(pkg) pkg$Version, character(1))
+) |>
+  gt()
 ```
+
+
+
