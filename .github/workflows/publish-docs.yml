@@ -1,0 +1,58 @@
+# This workflow can be used to publish the output of the _docs folder to GitHub
+# Pages. Currently, the workflow is set up to only trigger manually using the 
+# "Actions" tab on the GitHub repository page. To enable this more generally, 
+# do the following:
+#
+# 1. On the Settings > Pages tab, set the Source as GitHub Actions
+# 2. Uncomment out the push option for when this workflow activates
+# 3. Comment out the _docs/** entry in the .gitignore file and then
+#    commit and push that directory and its contents to GitHub.
+# 4. Check the Actions tab to see if the workflow was successful. If it 
+#    was successful, the directory will be visible at 
+#    https://USERNAME.github.io/REPONAME/
+#    where USERNAME is the user name where the project lives and REPONAME
+#    is the name of the repository. 
+# 
+# IMPORTANT NOTE: On the free GitHub plan, the repository must be public to 
+# use GitHub Pages. An alternative for private repositories is to use Netlify
+# as described in the README.
+
+name: Publish Docs to GitHub Pages
+
+on:
+  #push:
+  #  branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-24.04
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v6
+
+      - name: Upload rendered website
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: _docs
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
