@@ -21,7 +21,7 @@ Once you have ensured those installations, then follow these instructions to get
 3.  Change the name of the `research-template.Rproj` file in the local repository to the name of your project.
 4.  Open the project in RStudio. I usually do this by double-clicking the Rproj file.
 5.  From RStudio, open the `_quarto.yml` file and change the project title and author information. You can add multiple authors here if you like.
-6.  Opening RStudio, should have triggered `renv` activation and you can now type `renv::restore()` into the console to install all package dependencies that the project starts with. If, for some reason, the `renv` package is not available, first run `source("renv/activation.R")` to activate the project and install `renv` and then you can use `renv::restore()` to install package dependencies.
+6.  Opening RStudio should have triggered `renv` activation and you can now type `renv::restore()` into the console to install all package dependencies that the project starts with. If, for some reason, the `renv` package is not available, first run `source("renv/activation.R")` to activate the project and install `renv` and then you can use `renv::restore()` to install package dependencies.
 7.  In the upper right panel of RStudio, go to the Build tab and click "Render project." You will see how quarto runs through the entire project, script by script. Look at the `_docs` directory for the output.
 8.  Change the README file contents to describe your project.
 9.  Dump some raw data into `data/data_raw` and start coding! You can also learn more about how to use this workflow below.
