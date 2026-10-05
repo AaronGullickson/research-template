@@ -1,0 +1,7 @@
+# Add directories and files here that shold be ignored by renv
+# Syntax is the same as for gitignore
+
+data
+_docs
+_extensions
+_submissions
